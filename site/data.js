@@ -253,7 +253,7 @@ const PLACE_EXTRA = {
   minas:     { pid:"ChIJG5osdLGDagwRay-d0IB4-RM" },
   orotava:   {},
   dondegord: { tel:"+34674293096" },
-  elparque:  { pid:"0xc6a7f5cb73fd999:0xd6cc988be8442697" },
+  elparque:  {},
   sanpedro:  { tel:"+34922340875", pid:"ChIJOXBOfCV-agwRqwc-ffuIcxw" },
   rambla:    { pid:"ChIJTcGBjip-agwRXY9vMpgcHWA" },
   drago:     { tel:"+34922815685", pid:"ChIJueZPPv6HagwRdBPnNCk4rpc" },
