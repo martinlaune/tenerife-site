@@ -148,7 +148,7 @@ function dayCard(d){
   let body = "";
   if(d.obj) body += `<p class="dobj">${esc(d.obj)}</p>`;
   if(d.resa) body += `<div class="badge-resa">📌 Réservation : ${esc(d.resa)}</div>`;
-  body += '<div class="sched">' + d.sched.map(s=>`<div class="slot"><div class="t">${esc(s[0])}</div><div class="x">${esc(s[1])}</div>${s[2]?`<div class="xi">${esc(s[2])}</div>`:""}</div>`).join("") + '</div>';
+  body += '<div class="sched">' + d.sched.map(s=>`<div class="slot"><div class="t">${esc(s[0])}</div><div class="x">${esc(s[1])}${s[2]?` <button type="button" class="xi-toggle" aria-expanded="false">ℹ️</button>`:""}</div>${s[2]?`<div class="xi">${esc(s[2])}</div>`:""}</div>`).join("") + '</div>';
   if(d.lunch){
     const pb = (d.lunch.planB && d.lunch.planB!=="—") ? `<small>Plan B : ${esc(d.lunch.planB)}</small>` : "";
     body += `<div class="info-row"><div class="pill"><div class="k">🍴 Midi</div><div class="v">${esc(d.lunch.name)}${pb}</div></div>
@@ -345,9 +345,22 @@ function setupAddrToggles(){
   });
 }
 
+/* ---------- Dépliage des notes culturelles ---------- */
+function setupCulturalToggles(){
+  document.addEventListener("click", e=>{
+    const btn = e.target.closest(".xi-toggle");
+    if(!btn) return;
+    const slot = btn.closest(".slot");
+    const xi = slot && slot.querySelector(".xi");
+    if(!xi) return;
+    const open = xi.classList.toggle("show");
+    btn.setAttribute("aria-expanded", open);
+  });
+}
+
 /* ---------- Démarrage ---------- */
 document.addEventListener("DOMContentLoaded", ()=>{
   document.getElementById("subtitle").textContent = TRIP.meta.subtitle;
   renderDays(); renderHighlights(); renderPractical(); renderMap();
-  setupTabs(); setupSearch(); setupAddrToggles(); setupChecklists(); countdown(); setupToday(); registerSW();
+  setupTabs(); setupSearch(); setupAddrToggles(); setupCulturalToggles(); setupChecklists(); countdown(); setupToday(); registerSW();
 });
