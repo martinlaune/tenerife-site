@@ -278,14 +278,14 @@ function countdown(){
   else { num.textContent="♥"; lab.textContent="Quel voyage… souvenirs !"; }
 }
 
-/* ---------- Service worker (offline) — actif uniquement en HTTPS/localhost ---------- */
+/* ---------- Nettoyage service worker (suppression définitive) ---------- */
 function registerSW(){
-  if("serviceWorker" in navigator && (location.protocol==="https:" || location.hostname==="localhost")){
-    navigator.serviceWorker.register("sw.js", {updateViaCache:"none"}).catch(()=>{});
-    let refreshing = false;
-    navigator.serviceWorker.addEventListener("controllerchange", ()=>{
-      if(!refreshing){ refreshing=true; location.reload(); }
-    });
+  if(!("serviceWorker" in navigator)) return;
+  navigator.serviceWorker.getRegistrations().then(regs=>{
+    regs.forEach(r => r.unregister());
+  });
+  if(typeof caches !== "undefined"){
+    caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
   }
 }
 
