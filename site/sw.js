@@ -1,7 +1,7 @@
 /* Service worker — cache hors-ligne.
    Note iOS : ne s'active qu'en HTTPS (ou localhost). En http:// sur le réseau
    local, l'ajout à l'écran d'accueil fonctionne quand même, mais sans cache. */
-const CACHE = "tenerife-2026-v1";
+const CACHE = "tenerife-2026-v2";
 const ASSETS = [
   "./", "./index.html", "./styles.css", "./data.js", "./app.js",
   "./manifest.webmanifest",
