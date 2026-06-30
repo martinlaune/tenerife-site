@@ -148,7 +148,7 @@ function dayCard(d){
   let body = "";
   if(d.obj) body += `<p class="dobj">${esc(d.obj)}</p>`;
   if(d.resa) body += `<div class="badge-resa">📌 Réservation : ${esc(d.resa)}</div>`;
-  body += '<div class="sched">' + d.sched.map(s=>`<div class="slot"><div class="t">${esc(s[0])}</div><div class="x">${esc(s[1])}</div></div>`).join("") + '</div>';
+  body += '<div class="sched">' + d.sched.map(s=>`<div class="slot"><div class="t">${esc(s[0])}</div><div class="x">${esc(s[1])}</div>${s[2]?`<div class="xi">${esc(s[2])}</div>`:""}</div>`).join("") + '</div>';
   if(d.lunch){
     const pb = (d.lunch.planB && d.lunch.planB!=="—") ? `<small>Plan B : ${esc(d.lunch.planB)}</small>` : "";
     body += `<div class="info-row"><div class="pill"><div class="k">🍴 Midi</div><div class="v">${esc(d.lunch.name)}${pb}</div></div>
@@ -223,7 +223,7 @@ function buildIndex(){
   const idx = [];
   TRIP.days.forEach(d=>{
     const text = [d.dow,d.title,d.sum,d.resa,d.lunch&&d.lunch.name,d.lunch&&d.lunch.planB,d.lunch&&d.lunch.note,
-      ...(d.sched||[]).map(s=>s[1]), ...(d.notes||[]), ...((d.opts||[]).flat()),
+      ...(d.sched||[]).map(s=>s[1]), ...(d.sched||[]).map(s=>s[2]), ...(d.notes||[]), ...((d.opts||[]).flat()),
       ...((TRIP.dayPlaces&&TRIP.dayPlaces[d.id]||[]).map(k=>TRIP.places[k]?TRIP.places[k].n+" "+TRIP.places[k].a+" "+(TRIP.places[k].d||""):""))].filter(Boolean).join(" ");
     idx.push({type:"Jour", label:`${d.emoji} ${d.dow} — ${d.title}`, target:d.id, view:"jours", text:text.toLowerCase()});
   });
