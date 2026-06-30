@@ -17,23 +17,21 @@ cp -a "$REPO/$SUBDIR/." "$WEBROOT/"
 chown -R www-data:www-data "$WEBROOT"
 chmod -R a+rX "$WEBROOT"
 
-# Nettoie l'ancienne config cassée si elle existe
-rm -f /etc/nginx/conf.d/tenerife-no-cache.conf
-
-# Installe la config nginx complète avec headers no-cache
-SITE_CONF="/etc/nginx/sites-available/tenerife"
-if [ ! -f "$SITE_CONF" ] || ! diff -q "$REPO/deploy/tenerife-site.conf" "$SITE_CONF" >/dev/null 2>&1; then
-  cp "$REPO/deploy/tenerife-site.conf" "$SITE_CONF"
-  ln -sf "$SITE_CONF" /etc/nginx/sites-enabled/tenerife
-  rm -f /etc/nginx/sites-enabled/default
+# En-têtes no-cache : empêche iOS Safari de servir une version périmée.
+# Fichier conf.d au niveau http → s'applique à toutes les réponses, quel
+# que soit le bloc serveur actif.
+NOCACHE="/etc/nginx/conf.d/no-cache.conf"
+rm -f /etc/nginx/conf.d/tenerife-no-cache.conf   # nettoie l'ancienne config cassée
+if ! diff -q "$REPO/deploy/no-cache.conf" "$NOCACHE" >/dev/null 2>&1; then
+  cp "$REPO/deploy/no-cache.conf" "$NOCACHE"
   if nginx -t 2>/dev/null; then
-    nginx -s reload
-    echo "$(date '+%F %T') : config nginx mise à jour et rechargée"
+    # systemctl restart, pas « nginx -s reload » : ce dernier ne s'applique
+    # pas quand nginx est géré par systemd.
+    systemctl restart nginx
+    echo "$(date '+%F %T') : en-têtes no-cache nginx installés"
   else
-    # Rollback si la config est invalide
-    rm -f /etc/nginx/sites-enabled/tenerife
-    ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-    echo "$(date '+%F %T') : ERREUR config nginx invalide, rollback"
+    rm -f "$NOCACHE"
+    echo "$(date '+%F %T') : ERREUR config nginx invalide, annulée"
   fi
 fi
 
