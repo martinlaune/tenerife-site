@@ -77,7 +77,10 @@ img{display:block;max-width:100%}
 .slot::before{content:"";position:absolute;left:-21px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--teal);border:2px solid #fff}
 .slot .t{font-weight:800;font-size:.78rem;color:var(--teal)}
 .slot .x{font-size:.92rem}
-.slot .xi{font-size:.8rem;color:#5b7c79;font-style:italic;line-height:1.35;margin-top:2px}
+.slot .xi{font-size:.8rem;color:#5b7c79;font-style:italic;line-height:1.35;max-height:0;overflow:hidden;transition:max-height .3s ease,margin .3s ease;margin:0}
+.slot .xi.show{max-height:200px;margin-top:4px}
+.xi-toggle{background:none;border:none;cursor:pointer;font-size:.82rem;padding:0 2px;vertical-align:middle;opacity:.7;transition:opacity .2s}
+.xi-toggle:hover,.xi-toggle:active{opacity:1}
 .info-row{display:flex;gap:8px;margin-top:12px}
 .pill{background:#F3EFE4;border-radius:14px;padding:11px 13px;flex:1}
 .pill .k{font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
