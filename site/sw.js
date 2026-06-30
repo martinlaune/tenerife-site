@@ -4,7 +4,7 @@
    → fini les versions périmées : un simple rechargement suffit.
    Note iOS : ne s'active qu'en HTTPS (ou localhost). En http:// sur le réseau
    local, l'ajout à l'écran d'accueil fonctionne quand même, mais sans cache. */
-const CACHE = "tenerife-2026-v3";
+const CACHE = "tenerife-2026-v4";
 const ASSETS = [
   "./", "./index.html", "./styles.css", "./data.js", "./app.js",
   "./manifest.webmanifest",
@@ -21,7 +21,7 @@ self.addEventListener("fetch", e=>{
   // Réseau d'abord : on tente le serveur, on met à jour le cache, et on ne
   // retombe sur le cache que si le réseau est indisponible (hors-ligne).
   e.respondWith(
-    fetch(e.request).then(res=>{
+    fetch(e.request, {cache:"no-cache"}).then(res=>{
       const copy=res.clone();
       caches.open(CACHE).then(c=>c.put(e.request, copy)).catch(()=>{});
       return res;
