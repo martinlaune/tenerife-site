@@ -1,0 +1,8 @@
+# Drop-in systemd pour le service "webhook" déjà fourni par le paquet Debian
+# (/lib/systemd/system/webhook.service, qui charge /etc/webhook.conf).
+# On surcharge juste ExecStart pour n'écouter que sur 127.0.0.1 (jamais
+# exposé directement sur le réseau, seulement via le proxy nginx).
+# À installer dans /etc/systemd/system/webhook.service.d/override.conf
+[Service]
+ExecStart=
+ExecStart=/usr/bin/webhook -nopanic -hooks /etc/webhook.conf -ip 127.0.0.1 -port 9000 -verbose

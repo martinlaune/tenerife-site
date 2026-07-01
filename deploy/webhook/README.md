@@ -5,23 +5,32 @@ webhook GitHub déclenche `deploy.sh` immédiatement à chaque push sur `main`.
 
 ## Installation sur le Raspberry Pi (une seule fois)
 
-1. Installer le serveur webhook :
+1. Installer le serveur webhook (le paquet Debian fournit déjà un service
+   systemd `/lib/systemd/system/webhook.service`, activé automatiquement,
+   qui charge sa config depuis `/etc/webhook.conf`) :
    ```
    apt-get update -qq && apt-get install -y webhook
    ```
 
-2. Copier `hooks.json.example` vers `/etc/webhook/hooks.json` en remplaçant
-   `REPLACE_WITH_SECRET` par un secret généré (`openssl rand -hex 24`).
-   Ne jamais committer ce fichier avec le vrai secret.
+2. Copier `hooks.json.example` vers `/etc/webhook.conf` en remplaçant
+   `REPLACE_WITH_SECRET` par un secret généré (`openssl rand -hex 24`), puis
+   `chmod 600 /etc/webhook.conf`. Ne jamais committer ce fichier avec le
+   vrai secret.
 
-3. Copier `webhook.service.example` vers `/etc/systemd/system/webhook.service`,
-   puis :
+3. Créer le dossier de surcharge (n'existe pas par défaut sur une machine
+   neuve), copier `override.conf.example` dedans (surcharge le service du
+   paquet pour n'écouter que sur 127.0.0.1), puis recharger :
    ```
-   systemctl daemon-reload && systemctl enable --now webhook
+   mkdir -p /etc/systemd/system/webhook.service.d
+   cp deploy/webhook/override.conf.example /etc/systemd/system/webhook.service.d/override.conf
+   systemctl daemon-reload && systemctl restart webhook
    ```
 
 4. Ajouter le contenu de `nginx-hooks.conf.example` dans le `server{}` actif
-   (avant le `location /` existant), puis :
+   (avant le `location /` existant). Attention : faire la sauvegarde du
+   fichier en dehors de `sites-enabled/` (ce dossier est inclus en
+   wildcard par nginx — un `.bak` laissé dedans crée un conflit de
+   "duplicate default server"). Puis :
    ```
    nginx -t && systemctl restart nginx
    ```
@@ -33,3 +42,7 @@ webhook GitHub déclenche `deploy.sh` immédiatement à chaque push sur `main`.
    - Content type : `application/json`
    - Secret : le même secret qu'à l'étape 2
    - Events : "Just the push event"
+
+Vérification : `journalctl -u webhook -n 20` doit montrer les requêtes
+reçues. Un push réel sur `main` doit déclencher `deploy.sh` en quelques
+secondes, sans attendre le cron.
