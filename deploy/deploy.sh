@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 # Déploie le site depuis GitHub vers nginx (/var/www/html).
-# Tire toujours le dépôt et écrase le contenu — conçu pour tourner via cron toutes les 5 min.
+# Tire toujours le dépôt et écrase le contenu — déclenché par le cron (filet
+# de sécurité) et par le webhook GitHub (déploiement instantané sur push).
 set -euo pipefail
+
+# Verrou : évite que cron et webhook s'exécutent en même temps et se
+# marchent dessus pendant le rm -rf/cp du webroot.
+exec 200>/tmp/tenerife-deploy.lock
+flock -n 200 || { echo "$(date '+%F %T') : déploiement déjà en cours, on saute"; exit 0; }
 
 REPO="/opt/tenerife-site"
 WEBROOT="/var/www/html"
