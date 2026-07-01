@@ -151,7 +151,7 @@ function dayCard(d){
   body += '<div class="sched">' + d.sched.map(s=>`<div class="slot"><div class="t">${esc(s[0])}</div><div class="x">${esc(s[1])}${s[2]?` <button type="button" class="xi-toggle" aria-expanded="false">ℹ️</button>`:""}</div>${s[2]?`<div class="xi">${esc(s[2])}</div>`:""}</div>`).join("") + '</div>';
   if(d.lunch){
     const pb = (d.lunch.planB && d.lunch.planB!=="—") ? `<small>Plan B : ${esc(d.lunch.planB)}</small>` : "";
-    body += `<div class="info-row"><div class="pill"><div class="k">🍴 Midi</div><div class="v">${esc(d.lunch.name)}${pb}</div></div>
+    body += `<div class="info-row"><div class="pill"><div class="k">🍴 ${esc(d.lunch.label || "Midi")}</div><div class="v">${esc(d.lunch.name)}${pb}</div></div>
       <div class="pill"><div class="k">💶 Budget</div><div class="v">${esc(d.lunch.budget)}<small>${esc(d.lunch.note||"")}</small></div></div></div>`;
   }
   if(d.opts) body += '<div class="notes"><div class="nh">Au choix l\'après-midi</div>' + d.opts.map(o=>`<div class="opt"><b>${esc(o[0])}</b><br>${esc(o[1])}</div>`).join("") + '</div>';
