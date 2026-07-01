@@ -78,7 +78,7 @@ img{display:block;max-width:100%}
 .slot .t{font-weight:800;font-size:.78rem;color:var(--teal)}
 .slot .x{font-size:.92rem}
 .slot .xi{font-size:.8rem;color:#5b7c79;font-style:italic;line-height:1.35;max-height:0;overflow:hidden;transition:max-height .3s ease,margin .3s ease;margin:0}
-.slot .xi.show{max-height:200px;margin-top:4px}
+.slot .xi.show{max-height:600px;margin-top:4px}
 .xi-toggle{background:none;border:none;cursor:pointer;font-size:.82rem;padding:0 2px;vertical-align:middle;opacity:.7;transition:opacity .2s}
 .xi-toggle:hover,.xi-toggle:active{opacity:1}
 .info-row{display:flex;gap:8px;margin-top:12px}
