@@ -40,7 +40,7 @@ const TRIP = {
       sched:[["Matin","Repos à l'hôtel — La Orotava non visitée ce jour"],["14h","Déjeuner — Bar Cafetería El Parque (Puerto de la Cruz) ✓"],["~15h","Route vers le Mirador de San Pedro (parking gratuit)"],["15h30–16h30","Rambla de Castro : San Pedro → Fortín → Gordejuela ✓","Le Fortín de San Fernando, petite forteresse du 17ᵉ siècle, protégeait la côte des attaques de pirates ; le sentier traverse une ancienne plantation de palmiers et de bananiers."],["~17h","Retour, douche, repos"]],
       notes:["Rambla de Castro faite ✓ · El Lance pas fait","La Orotava non visitée : à envisager sur un autre jour si l'occasion se présente"] },
 
-    { id:"j5", scene:"dragon", emoji:"🐉", dow:"Mercredi 1ᵉʳ juillet", title:"Grotte de lave & goûter à Garachico",
+    { id:"j5", scene:"cliffs", emoji:"🕳️", dow:"Mercredi 1ᵉʳ juillet", title:"Grotte de lave & goûter à Garachico",
       sum:"Direct à la grotte, puis droit à Garachico pour un goûter face à la mer.",
       obj:"Départ direct de l'hôtel vers la Cueva del Viento (réservée), puis direction Garachico pour le goûter et la balade (pas d'arrêt à Icod).",
       resa:"Cueva del Viento · 12h30 (visite en français)",
