@@ -40,13 +40,12 @@ const TRIP = {
       sched:[["Matin","Repos à l'hôtel — La Orotava non visitée ce jour"],["14h","Déjeuner — Bar Cafetería El Parque (Puerto de la Cruz) ✓"],["~15h","Route vers le Mirador de San Pedro (parking gratuit)"],["15h30–16h30","Rambla de Castro : San Pedro → Fortín → Gordejuela ✓","Le Fortín de San Fernando, petite forteresse du 17ᵉ siècle, protégeait la côte des attaques de pirates ; le sentier traverse une ancienne plantation de palmiers et de bananiers."],["~17h","Retour, douche, repos"]],
       notes:["Rambla de Castro faite ✓ · El Lance pas fait","La Orotava non visitée : à envisager sur un autre jour si l'occasion se présente"] },
 
-    { id:"j5", scene:"dragon", emoji:"🐉", dow:"Mercredi 1ᵉʳ juillet", title:"Drago, grotte de lave & Garachico",
-      sum:"Arbre millénaire + Cueva del Viento + village.",
-      obj:"Matinée tranquille à Icod, on protège la réservation de la grotte, puis Garachico en version courte.",
+    { id:"j5", scene:"dragon", emoji:"🐉", dow:"Mercredi 1ᵉʳ juillet", title:"Grotte de lave, Drago & goûter à Garachico",
+      sum:"Direct à la grotte, puis l'arbre millénaire et un goûter face à la mer.",
+      obj:"Départ direct de l'hôtel vers la Cueva del Viento (réservée), puis Drago Milenario et goûter/balade à Garachico.",
       resa:"Cueva del Viento · 12h30 (visite en français)",
-      lunch:{name:"Bocadillos La Tentación (Icod)", planB:"La Casa del Drago", budget:"20–30 €", note:"déjeuner rapide avant la grotte"},
-      sched:[["9h15","Départ vers Icod de los Vinos"],["10h","Icod : l'arbre Drago (vu de l'extérieur), place & ruelles","Âgé d'environ 800 à 1000 ans, ce dragonnier géant était considéré comme sacré par les Guanches, les premiers habitants de l'île ; sa sève rouge, le « sang de dragon », servait à l'embaumement et à la teinture."],["11h","Bocadillos à emporter (La Tentación)"],["12h15","Arrivée au centre visiteurs (15 min de marge)"],["12h30–15h","Cueva del Viento : visite guidée en français (~2h)","Formé il y a environ 27 000 ans par une éruption du Pico Viejo, ce tube de lave de plus de 17 km est l'un des plus longs et des plus anciens du monde, avec une faune unique adaptée à l'obscurité totale."],["16h–17h30","Garachico : ruelles, front de mer, piscines El Caletón","Port le plus prospère de l'île jusqu'à ce qu'une coulée de lave ensevelisse une partie du village en 1706 ; les piscines d'El Caletón se sont formées dans cette même coulée, refroidie au contact de l'océan."],["~18h","Retour vers Puerto"]],
-      notes:["GROTTE : pantalon long + chaussures fermées OBLIGATOIRES","Petit vêtement chaud · pas de sac à dos pendant la visite","Arriver 15 min avant (12h15) · Ventoline accessible","Garachico court et fluide : baignade seulement si mer très calme","Pas de Mirador Atalaya ce jour-là sauf énergie exceptionnelle"] },
+      lunch:{name:"Goûter — Cinnamon Atelier (Garachico)", planB:"Le Pâtissier ou La Alsaciana (vue mer)", budget:"10–15 €", note:"après la grotte, pas de déjeuner formel", label:"Goûter"},
+      sched:[["11h20","Départ direct de l'hôtel vers la Cueva del Viento"],["12h10","Arrivée, parking, check-in (prévoir 15–20 min avant)"],["12h30–14h","Cueva del Viento : visite guidée (~1h30 sur place, prendre une petite laine)"],["14h10–14h30","Drago Milenario à Icod (arbre millénaire, 20 min)"],["14h45","Route vers Garachico (~15 min)"],["15h–15h45","Goûter à Cinnamon Atelier, terrasse face à la mer"],["15h45–16h45","Garachico : Castillo de San Miguel, piscines naturelles El Caletón"],["~17h","Retour vers Puerto de la Cruz"]] },
 
     { id:"j6", scene:"town", emoji:"🎨", dow:"Jeudi 2 juillet", title:"La Laguna & forêt d'Agua García",
       sum:"Ville colorée UNESCO + micro-balade en forêt.",
