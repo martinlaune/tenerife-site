@@ -17,10 +17,12 @@ webhook GitHub déclenche `deploy.sh` immédiatement à chaque push sur `main`.
    `chmod 600 /etc/webhook.conf`. Ne jamais committer ce fichier avec le
    vrai secret.
 
-3. Copier `override.conf.example` vers
-   `/etc/systemd/system/webhook.service.d/override.conf` (surcharge le
-   service du paquet pour n'écouter que sur 127.0.0.1), puis :
+3. Créer le dossier de surcharge (n'existe pas par défaut sur une machine
+   neuve), copier `override.conf.example` dedans (surcharge le service du
+   paquet pour n'écouter que sur 127.0.0.1), puis recharger :
    ```
+   mkdir -p /etc/systemd/system/webhook.service.d
+   cp deploy/webhook/override.conf.example /etc/systemd/system/webhook.service.d/override.conf
    systemctl daemon-reload && systemctl restart webhook
    ```
 
