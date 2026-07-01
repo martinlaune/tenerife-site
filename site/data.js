@@ -44,7 +44,7 @@ const TRIP = {
       sum:"Direct à la grotte, puis l'arbre millénaire et un goûter face à la mer.",
       obj:"Départ direct de l'hôtel vers la Cueva del Viento (réservée), puis Drago Milenario et goûter/balade à Garachico.",
       resa:"Cueva del Viento · 12h30 (visite en français)",
-      lunch:{name:"Goûter — Cinnamon Atelier (Garachico)", planB:"Le Pâtissier ou La Alsaciana (vue mer)", budget:"10–15 €", note:"après la grotte, pas de déjeuner formel", label:"Goûter"},
+      lunch:{name:"Cinnamon Atelier (Garachico)", planB:"Le Pâtissier ou La Alsaciana (vue mer)", budget:"10–15 €", note:"après la grotte, pas de déjeuner formel", label:"Goûter"},
       sched:[["11h20","Départ direct de l'hôtel vers la Cueva del Viento"],["12h10","Arrivée, parking, check-in (prévoir 15–20 min avant)"],["12h30–14h","Cueva del Viento : visite guidée (~1h30 sur place, prendre une petite laine)"],["14h10–14h30","Drago Milenario à Icod (arbre millénaire, 20 min)"],["14h45","Route vers Garachico (~15 min)"],["15h–15h45","Goûter à Cinnamon Atelier, terrasse face à la mer"],["15h45–16h45","Garachico : Castillo de San Miguel, piscines naturelles El Caletón"],["~17h","Retour vers Puerto de la Cruz"]] },
 
     { id:"j6", scene:"town", emoji:"🎨", dow:"Jeudi 2 juillet", title:"La Laguna & forêt d'Agua García",
