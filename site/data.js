@@ -84,10 +84,10 @@ const TRIP = {
       notes:["Maillot, serviette, crème, casquette, Ventoline accessible","Vianney en mer : adulte tout près + brassards · pas de saut/tyrolienne","Parking : viser le port / Poblado Marinero, sinon Parking El Mirador","Ne pas chercher longtemps une place gratuite : basculer vite sur le parking organisé","Si fatigue / mal de mer : on saute le mirador sans regret","Icod (Drago) : arrêt optionnel sur la route du retour, gratuit et visible depuis la rue, pas besoin d'entrer dans le parc — on saute sans regret si tout le monde est fatigué"] },
 
     { id:"j11", scene:"sunset", emoji:"🌅", dow:"Mardi 7 juillet", title:"Piscines & coucher de soleil au Chipeque",
-      sum:"Lago Martiánez le matin, sunset sur les nuages le soir.",
-      obj:"Journée construite autour du coucher de soleil au Chipeque, avec un matin léger et un après-midi de vrai repos.",
+      sum:"Lago Martiánez & Playa Jardín le matin, sunset sur les nuages le soir.",
+      obj:"Journée construite autour du coucher de soleil au Chipeque, avec un matin léger (piscines + plage de sable noir) et un après-midi de vrai repos.",
       lunch:{name:"Repas simple à Puerto", planB:"Tinguaro le soir (bon hôtel)", budget:"simple", note:"prévenir le maître d'hôtel LUNDI au petit-déj pour le bon Tinguaro"},
-      sched:[["10h30","Lago Martiánez : piscines, moment baignade (format court)","Conçu en 1970 par l'artiste canarien César Manrique, ce complexe de piscines d'eau de mer mêle volcanisme et modernité en intégrant la roche noire naturelle de la côte dans son architecture."],["13h15","Déjeuner simple à Puerto ou à l'hôtel"],["14h–17h","Vrai repos : douche, sieste possible, on prépare le sac Chipeque"],["17h45","Repas tôt au Tinguaro (bon demi-pension, pas trop lourd)"],["19h15","Départ vers Chipeque (route de montagne)"],["~20h15","Installation au Mirador de Chipeque (~1800 m)"],["~20h40","Coucher de soleil au-dessus de la mer de nuages ✨","Ce phénomène, fréquent sur le versant nord de l'île, est dû à l'alizé qui pousse les nuages contre les pentes du Teide, où ils stagnent sous une couche d'air plus chaud — créant cette mer de nuages qui s'arrête net en altitude."],["21h15","On repart sans traîner à la tombée de la nuit"],["~22h20","Retour à l'hôtel, dodo"]],
+      sched:[["10h30","Lago Martiánez : piscines, moment baignade (format court)","Conçu en 1970 par l'artiste canarien César Manrique, ce complexe de piscines d'eau de mer mêle volcanisme et modernité en intégrant la roche noire naturelle de la côte dans son architecture."],["11h45","Playa Jardín : plage de sable noir juste à côté","Autre création de César Manrique : trois plages de sable volcanique noir (Castillo, Charcón, Grande) reliées par un jardin de plantes canariennes, rochers et cascades ; elle a reçu le Pavillon Bleu pour la qualité de son eau."],["13h15","Déjeuner simple à Puerto ou à l'hôtel"],["14h–17h","Vrai repos : douche, sieste possible, on prépare le sac Chipeque"],["17h45","Repas tôt au Tinguaro (bon demi-pension, pas trop lourd)"],["19h15","Départ vers Chipeque (route de montagne)"],["~20h15","Installation au Mirador de Chipeque (~1800 m)"],["~20h40","Coucher de soleil au-dessus de la mer de nuages ✨","Ce phénomène, fréquent sur le versant nord de l'île, est dû à l'alizé qui pousse les nuages contre les pentes du Teide, où ils stagnent sous une couche d'air plus chaud — créant cette mer de nuages qui s'arrête net en altitude."],["21h15","On repart sans traîner à la tombée de la nuit"],["~22h20","Retour à l'hôtel, dodo"]],
       notes:["Chipeque seulement si : visibilité correcte, pas de brouillard sur la TF-24, pas de calima, pas de gros vent, famille reposée","~1800 m : pull, coupe-vent, baskets, eau, snacks, téléphone chargé, Ventoline","Bon Tinguaro : 16 € / pers (64 € à 4), à demander 24h avant","Plan B si Chipeque tombe à l'eau : balade douce à Puerto + repos (pas une autre grosse sortie)"] },
 
     { id:"j12", scene:"forest", emoji:"🥾", dow:"Mercredi 8 juillet", title:"Dernière rando & festin guachinche",
@@ -181,6 +181,7 @@ TRIP.places = {
   flipper:   { n:"Flipper Uno",                  a:"Poblado Marinero, Los Gigantes",           ll:"28.2460211,-16.8422947" },
   archipenque:{n:"Mirador Archipenque",          a:"Acantilados de Los Gigantes",              ll:"28.2404149,-16.8370118" },
   martianez: { n:"Lago Martiánez",               a:"Av. Cristóbal Colón, Puerto de la Cruz",   ll:"28.4187585,-16.544278" },
+  playajardin:{n:"Playa Jardín",                 a:"C. San Telmo, Puerto de la Cruz",           ll:"Playa Jardín, Puerto de la Cruz" },
   chipeque:  { n:"Mirador de Chipeque",          a:"TF-24 (~1800 m)",                          ll:"28.3739518,-16.4638328" },
   aguamansa: { n:"Aguamansa — SL-TF 81",         a:"TF-21, La Orotava",                        ll:"28.3606215,-16.5015584" },
   ramal:     { n:"Guachinche El Ramal",          a:"Ctra. El Ramal (TF-211), La Orotava",      ll:"28.398079,-16.5198611" },
@@ -197,7 +198,7 @@ TRIP.dayPlaces = {
   j8:["cruzcarmen","bajamar","punta"],
   j9:["barranco","mimadre","charco"],
   j10:["flipper","archipenque","drago"],
-  j11:["martianez","chipeque"],
+  j11:["martianez","playajardin","chipeque"],
   j12:["aguamansa","ramal","humboldt","orotava"],
   j13:["tfs"],
 };
@@ -242,6 +243,7 @@ const PLACE_INFO = {
   flipper:   { d:"Sortie en bateau pirate : baleines, dauphins et falaises de Los Gigantes, repas inclus.", h:"Billetterie 9h–18h30" },
   archipenque:{ d:"Balcon sur les falaises de Los Gigantes (jusqu'à 800 m) ; petit bar." },
   martianez: { d:"Complexe de piscines d'eau de mer signé César Manrique, au bord de l'océan.", h:"10h–18h · ~7 €" },
+  playajardin:{d:"Plage de sable volcanique noir, jardins et cascades signés César Manrique ; Pavillon Bleu.", h:"Accès libre" },
   chipeque:  { d:"Mirador à ~1800 m : coucher de soleil au-dessus de la mer de nuages, face au Teide." },
   aguamansa: { d:"Forêt de pins et de lauriers ; boucle familiale SL-TF 81, ombragée." },
   ramal:     { d:"Guachinche typique : vins maison et viandes grillées canariennes, à partager.", h:"Mer–dim midi (ven/sam aussi le soir) · fermé lun & mar" },
