@@ -270,11 +270,12 @@ function setupTabs(){
 }
 
 /* ---------- Compte à rebours ---------- */
+const midnight = d => new Date(d.getFullYear(), d.getMonth(), d.getDate());
 function countdown(){
-  const start=new Date(TRIP.meta.start), end=new Date(TRIP.meta.end), now=new Date(), day=864e5;
+  const start=midnight(new Date(TRIP.meta.start)), end=midnight(new Date(TRIP.meta.end)), now=midnight(new Date()), day=864e5;
   const num=document.getElementById("cd-num"), lab=document.getElementById("cd-lab");
-  if(now<start){ const n=Math.ceil((start-now)/day); num.textContent=n; lab.textContent=(n<=1?"jour":"jours")+" avant le départ !"; }
-  else if(now<=end){ const n=Math.floor((now-start)/day)+1; num.textContent="J"+n; lab.textContent="on est à Tenerife ! 🏝️"; }
+  if(now<start){ const n=Math.round((start-now)/day); num.textContent=n; lab.textContent=(n<=1?"jour":"jours")+" avant le départ !"; }
+  else if(now<=end){ const n=Math.round((now-start)/day)+1; num.textContent="J"+n; lab.textContent="on est à Tenerife ! 🏝️"; }
   else { num.textContent="♥"; lab.textContent="Quel voyage… souvenirs !"; }
 }
 
@@ -329,8 +330,8 @@ function setupChecklists(){
 
 /* ---------- Mode « Aujourd'hui » ---------- */
 function setupToday(){
-  const start=new Date(TRIP.meta.start), now=new Date(), day=864e5;
-  const idx=Math.floor((now-start)/day);
+  const start=midnight(new Date(TRIP.meta.start)), now=midnight(new Date()), day=864e5;
+  const idx=Math.round((now-start)/day);
   if(idx<0 || idx>=TRIP.days.length) return;
   const d=TRIP.days[idx], el=document.getElementById(d.id);
   if(!el) return;
