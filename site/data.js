@@ -261,7 +261,7 @@ const PLACE_INFO = {
   flipper:   { d:"Sortie en bateau pirate : baleines, dauphins et falaises de Los Gigantes, repas inclus.", h:"Billetterie 9h–18h30" },
   parkinglg: { d:"Parking couvert et surveillé 24h/24, à 3-5 min à pied du port par la promenade.", h:"1,32 €/h · ouvert 24h/24" },
   archipenque:{ d:"Balcon sur les falaises de Los Gigantes (jusqu'à 800 m) ; petit bar." },
-  martianez: { d:"Complexe de piscines d'eau de mer signé César Manrique, au bord de l'océan.", h:"10h–18h · ~7 €" },
+  martianez: { d:"Complexe de piscines d'eau de mer signé César Manrique, au bord de l'océan.", h:"10h–19h (juil.–sept.) · 5,50 € adulte, 2,50 € enfant (-10 ans)" },
   playajardin:{d:"Plage de sable volcanique noir, jardins et cascades signés César Manrique ; Pavillon Bleu.", h:"Accès libre" },
   chipeque:  { d:"Mirador à ~1800 m : coucher de soleil au-dessus de la mer de nuages, face au Teide." },
   aguamansa: { d:"Forêt de pins et de lauriers ; boucle familiale SL-TF 81, ombragée." },
