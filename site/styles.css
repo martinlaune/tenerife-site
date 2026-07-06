@@ -113,6 +113,7 @@ img{display:block;max-width:100%}
 .da.go{background:var(--teal)} .da.go:active{background:#0E6F73}
 .da.see{background:#5B7BB0} .da.see:active{background:#445E8C}
 .da.call{background:var(--palm)} .da.call:active{background:#246E47}
+.da.trail{background:var(--gold)} .da.trail:active{background:#C98523}
 
 /* contacts urgence */
 .contact{background:#FFF3EE;border:1px solid #FAD9CC;border-radius:14px;padding:11px 13px;margin-top:8px}
