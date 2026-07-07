@@ -90,11 +90,11 @@ const TRIP = {
       notes:["Parking Cruz del Carmen très limité — en haute saison l'affluence n'est plus réservée au week-end","Sentidos et Enigmas partent du même parking (Cruz del Carmen / Mirador de Zapata) : pas de trajet entre les deux","Restaurante Cruz del Carmen fermé le jour J malgré les horaires affichés — repli sur Tajaqué à La Laguna, très bien noté","El Sauzal (500 Escalones + Lavaderos) non fait à cause de la chaleur — accepté comme une des pertes du séjour (comme El Rincón de Edu)","Il Gelataio (La Paz) : glacier artisanal, zone piétonne, stationnement plus simple qu'au port","Chipeque ce soir seulement si visibilité correcte, pas de brouillard/calima, famille encore en forme — sinon on reste tranquille à Puerto, aucun regret"] },
 
     { id:"j12", scene:"forest", emoji:"🥾", dow:"Mercredi 8 juillet", title:"Rando père-fils & derniers moments",
-      sum:"Alban & Papa à Aguamansa, déjeuner à l'hôtel, La Orotava, valises.",
-      obj:"Dernière vraie journée : rando père-fils forestière courte pendant que Maman et Vianney profitent de l'hôtel, déjeuner tous ensemble à l'hôtel, puis bonus La Orotava, repos et valises.",
+      sum:"Alban & Papa à Aguamansa, déjeuner à l'hôtel, piscine, ping-pong, valises.",
+      obj:"Dernière vraie journée : rando père-fils forestière courte pendant que Maman et Vianney profitent de l'hôtel, déjeuner tous ensemble, puis après-midi tranquille à l'hôtel (piscine, ping-pong, valises).",
       lunch:{name:"Repas à l'hôtel", planB:"—", budget:"inclus/pension", note:"retour de la rando prévu avant 13h"},
-      sched:[["10h45–12h15","Alban & Papa : randonnée SL-TF 81 Camino de la Orilla del Monte, Aguamansa (boucle forestière, rythme modéré)","Ce sentier traverse une pinède de pin canarien, une espèce endémique capable de repousser après un incendie — une adaptation unique au volcanisme de l'île."],["13h","Déjeuner à l'hôtel, tous ensemble"],["14h30","La Orotava : vieille ville en 20 min (balcons de bois, rues en pente)","Vieille ville canarienne construite en pente sur les flancs de la vallée, célèbre pour ses maisons aux balcons de bois sculptés — un modèle d'architecture qui a essaimé dans toute l'Amérique coloniale espagnole."],["15h00","Retour, douche, on commence les valises"],["17h","Dernière balade douce à Puerto : Plaza del Charco, glace & souvenirs"],["Soir","Dîner à l'hôtel, dernière soirée tranquille"]],
-      notes:["SL-TF 81 : boucle 3,9 km, ~160 m de dénivelé, 1h-1h30 · télécharger la trace hors ligne","Chaussures fermées, eau, casquette, crème, Ventoline accessible pour Alban","Après le déjeuner à l'hôtel, on ressort vers La Orotava (~20 min) : un aller-retour, à garder en tête si tout le monde est fatigué","La Orotava : arrêt volontairement court, pas de nouvelle grosse activité avant les valises","Anticiper le stationnement à Aguamansa"] },
+      sched:[["10h45–12h15","Alban & Papa : randonnée SL-TF 81 Camino de la Orilla del Monte, Aguamansa (boucle forestière, rythme modéré)","Ce sentier traverse une pinède de pin canarien, une espèce endémique capable de repousser après un incendie — une adaptation unique au volcanisme de l'île."],["13h","Déjeuner à l'hôtel, tous ensemble"],["14h–17h","Après-midi à l'hôtel : piscine, ping-pong, on prépare les valises"],["17h","Dernière balade douce à Puerto : Plaza del Charco, glace & souvenirs"],["Soir","Dîner à l'hôtel, dernière soirée tranquille"]],
+      notes:["SL-TF 81 : boucle 3,9 km, ~160 m de dénivelé, 1h-1h30 · télécharger la trace hors ligne","Chaussures fermées, eau, casquette, crème, Ventoline accessible pour Alban","Anticiper le stationnement à Aguamansa"] },
 
     { id:"j13", scene:"departure", emoji:"👋", dow:"Jeudi 9 juillet", title:"¡Hasta luego Tenerife !",
       sum:"Matinée tranquille, route, envol le soir.",
@@ -240,7 +240,7 @@ TRIP.dayPlaces = {
   j9:["barranco","miradordrago","sanmarcos","sanjosellanos"],
   j10:["parkinglg","flipper","archipenque"],
   j11:["enigmas","sentidos","tajaque","gelataio"],
-  j12:["aguamansa","orotava"],
+  j12:["aguamansa"],
   j13:["tfs"],
 };
 
