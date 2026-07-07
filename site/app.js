@@ -358,7 +358,7 @@ function renderSouvenirs(){
     const place = hero.place ? TRIP.places[hero.place] : null;
     return `
     <div class="moment" data-mi="${i}">
-      <div class="momhero"><img src="${photoUrl(hero.id,'thumb')}" alt="${esc(m.h.title)}" loading="lazy"></div>
+      <div class="momhero"><div class="momheroblur" style="background-image:url('${photoUrl(hero.id,'thumb')}')"></div><img src="${photoUrl(hero.id,'thumb')}" alt="${esc(m.h.title)}" loading="lazy"></div>
       <div class="mombody">
         <span class="mcount">📸 ${m.photos.length} photo${m.photos.length>1?"s":""}</span>
         <div class="mwhen">${esc(m.h.when)}</div>
