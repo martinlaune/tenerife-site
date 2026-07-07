@@ -92,8 +92,8 @@ const TRIP = {
     { id:"j12", scene:"forest", emoji:"🥾", dow:"Mercredi 8 juillet", title:"Rando père-fils & derniers moments",
       sum:"Alban & Papa à Aguamansa, déjeuner à l'hôtel, piscine, ping-pong, valises.",
       obj:"Dernière vraie journée : rando père-fils forestière courte pendant que Maman et Vianney profitent de l'hôtel, déjeuner tous ensemble, puis après-midi tranquille à l'hôtel (piscine, ping-pong, valises).",
-      lunch:{name:"Repas à l'hôtel", planB:"—", budget:"inclus/pension", note:"retour de la rando prévu avant 13h"},
-      sched:[["10h45–12h15","Alban & Papa : randonnée SL-TF 81 Camino de la Orilla del Monte, Aguamansa (boucle forestière, rythme modéré)","Ce sentier traverse une pinède de pin canarien, une espèce endémique capable de repousser après un incendie — une adaptation unique au volcanisme de l'île."],["13h","Déjeuner à l'hôtel, tous ensemble"],["14h–17h","Après-midi à l'hôtel : piscine, ping-pong, on prépare les valises"],["17h","Dernière balade douce à Puerto : Plaza del Charco, glace & souvenirs"],["Soir","Dîner à l'hôtel, dernière soirée tranquille"]],
+      lunch:{name:"Repas à l'hôtel", planB:"—", budget:"inclus/pension", note:"retour prévu vers 13h15, après un arrêt au Mirador Humboldt"},
+      sched:[["10h45–12h15","Alban & Papa : randonnée SL-TF 81 Camino de la Orilla del Monte, Aguamansa (boucle forestière, rythme modéré)","Ce sentier traverse une pinède de pin canarien, une espèce endémique capable de repousser après un incendie — une adaptation unique au volcanisme de l'île."],["12h30","Alban & Papa : arrêt au Mirador Humboldt en redescendant (15-20 min, sur la route)","Nommé en hommage au naturaliste Alexander von Humboldt, qui fit escale à Tenerife en 1799 en route pour l'Amérique du Sud et décrivit cette vue sur la vallée de La Orotava comme l'une des plus belles du monde."],["13h15","Déjeuner à l'hôtel, tous ensemble"],["14h–17h","Après-midi à l'hôtel : piscine, ping-pong, on prépare les valises"],["17h","Dernière balade douce à Puerto : Plaza del Charco, glace & souvenirs"],["Soir","Dîner à l'hôtel, dernière soirée tranquille"]],
       notes:["SL-TF 81 : boucle 3,9 km, ~160 m de dénivelé, 1h-1h30 · télécharger la trace hors ligne","Chaussures fermées, eau, casquette, crème, Ventoline accessible pour Alban","Anticiper le stationnement à Aguamansa"] },
 
     { id:"j13", scene:"departure", emoji:"👋", dow:"Jeudi 9 juillet", title:"¡Hasta luego Tenerife !",
@@ -240,7 +240,7 @@ TRIP.dayPlaces = {
   j9:["barranco","miradordrago","sanmarcos","sanjosellanos"],
   j10:["parkinglg","flipper","archipenque"],
   j11:["enigmas","sentidos","tajaque","gelataio"],
-  j12:["aguamansa"],
+  j12:["aguamansa","humboldt"],
   j13:["tfs"],
 };
 
