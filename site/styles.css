@@ -172,8 +172,8 @@ img{display:block;max-width:100%}
 /* souvenirs (moments illustrés par des photos) */
 .moment{background:var(--card);border:1px solid var(--line);border-radius:18px;margin-bottom:15px;
   box-shadow:0 6px 18px var(--shadow);overflow:hidden;cursor:pointer}
-.momhero{height:220px;overflow:hidden;background:#cfeaee;position:relative}
-.momhero img{width:100%;height:220px;object-fit:cover;display:block}
+.momhero{overflow:hidden;background:#cfeaee;position:relative;text-align:center}
+.momhero img{width:100%;height:auto;max-height:480px;object-fit:contain;display:block;margin:0 auto}
 .mombody{padding:14px 16px 16px}
 .mcount{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;color:#fff;
   background:var(--ink);padding:3px 10px;border-radius:10px;margin-bottom:8px}
