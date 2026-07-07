@@ -299,7 +299,8 @@ function renderMap(){
   const X=ll=>(PAD+(parseFloat(ll.split(",")[1])-LNGMIN)/(LNGMAX-LNGMIN)*(W-2*PAD));
   const Y=ll=>(PAD+(LATMAX-parseFloat(ll.split(",")[0]))/(LATMAX-LATMIN)*(H-2*PAD));
   const island="M22,112 Q60,80 95,82 Q150,66 200,42 L262,26 Q236,64 220,118 Q196,170 156,214 Q120,176 100,168 Q66,150 52,140 Q30,128 22,112 Z";
-  const dots=Object.keys(TRIP.places).map(k=>{const p=TRIP.places[k];
+  const hasCoords=ll=>/^-?\d+(\.\d+)?,-?\d+(\.\d+)?$/.test(ll);
+  const dots=Object.keys(TRIP.places).filter(k=>hasCoords(TRIP.places[k].ll)).map(k=>{const p=TRIP.places[k];
     return `<circle class="mdot" data-k="${k}" cx="${X(p.ll).toFixed(1)}" cy="${Y(p.ll).toFixed(1)}" r="5"><title>${esc(p.n)}</title></circle>`;}).join("");
   root.innerHTML = `
     <div class="mapcap" id="mapcap">Touche un point — ou un lieu dans la liste — pour le situer et lancer l'itinéraire.</div>
@@ -319,6 +320,141 @@ function renderMap(){
     const dot=root.querySelector('.mdot[data-k="'+k+'"]'); if(dot) dot.parentNode.appendChild(dot);
   }
   root.querySelectorAll(".mdot,.mli").forEach(el=>el.addEventListener("click",()=>select(el.dataset.k)));
+}
+
+/* ---------- Mode Souvenir (moments illustrés par des photos) ---------- */
+function photoUrl(id, size){ return `photos/${size}/${id}.webp`; }
+
+const FR_MOIS = ["janv.","févr.","mars","avr.","mai","juin","juil.","août","sept.","oct.","nov.","déc."];
+function photoDate(ts){
+  const [d,t] = ts.split(" ");
+  const [,m,day] = d.split("-").map(Number);
+  const [h,mi] = t.split(":");
+  return `${day} ${FR_MOIS[m-1]} · ${h}h${mi}`;
+}
+
+const SOUV = { moments:[], momentIdx:0, photoIdx:0 };
+
+function souvenirMoments(){
+  const byId = {}; (TRIP.photos||[]).forEach(p=>byId[p.id]=p);
+  return (TRIP.highlights||[])
+    .filter(h=>h.photos && h.photos.length)
+    .map(h=>({ h, photos: h.photos.map(id=>byId[id]).filter(Boolean) }))
+    .filter(m=>m.photos.length)
+    .sort((a,b)=>parseInt((a.h.day||"j99").slice(1)) - parseInt((b.h.day||"j99").slice(1)));
+}
+
+function renderSouvenirs(){
+  const root = document.getElementById("v-souvenirs");
+  if(!root) return;
+  const moments = souvenirMoments();
+  SOUV.moments = moments;
+  if(!moments.length){
+    root.innerHTML = `<div class="panel"><p class="ptext">Pas encore de photos rattachées à un moment — elles apparaîtront ici au fil du voyage.</p></div>`;
+    return;
+  }
+  root.innerHTML = moments.map((m,i)=>{
+    const hero = m.photos[0];
+    const place = hero.place ? TRIP.places[hero.place] : null;
+    return `
+    <div class="moment" data-mi="${i}">
+      <div class="momhero"><img src="${photoUrl(hero.id,'thumb')}" alt="${esc(m.h.title)}" loading="lazy"></div>
+      <div class="mombody">
+        <span class="mcount">📸 ${m.photos.length} photo${m.photos.length>1?"s":""}</span>
+        <div class="mwhen">${esc(m.h.when)}</div>
+        <h3>${esc(m.h.title)}</h3>
+        <p>${esc(m.h.text)}</p>
+        ${place?`<button type="button" class="mplace" data-k="${hero.place}">📍 ${esc(place.n)}</button>`:""}
+      </div>
+    </div>`;
+  }).join("");
+
+  root.querySelectorAll(".moment").forEach(el=>{
+    el.addEventListener("click", e=>{
+      if(e.target.closest(".mplace")) return;
+      openLightbox(parseInt(el.dataset.mi), 0);
+    });
+  });
+  root.querySelectorAll(".mplace").forEach(btn=>{
+    btn.addEventListener("click", e=>{
+      e.stopPropagation();
+      jumpToPlaceOnMap(btn.dataset.k);
+    });
+  });
+  ensureLightbox();
+}
+
+function jumpToPlaceOnMap(key){
+  show("carte");
+  setTimeout(()=>{ const b=document.querySelector('.mli[data-k="'+key+'"]'); if(b) b.click(); }, 60);
+}
+
+function ensureLightbox(){
+  if(document.getElementById("lightbox")) return;
+  document.body.insertAdjacentHTML("beforeend", `
+    <div class="lightbox" id="lightbox">
+      <div class="lbtop">
+        <div class="lbtitle" id="lbtitle"></div>
+        <button type="button" class="lbclose" id="lbclose" aria-label="Fermer">✕</button>
+      </div>
+      <div class="lbmain">
+        <button type="button" class="lbnav lbprev" id="lbprev" aria-label="Précédent">‹</button>
+        <img class="lbimg" id="lbimg" alt="">
+        <button type="button" class="lbnav lbnext" id="lbnext" aria-label="Suivant">›</button>
+      </div>
+      <div class="lbfoot">
+        <div class="lbcap" id="lbcap"></div>
+        <button type="button" class="lbmap" id="lbmap">🗺️ Voir sur la carte</button>
+      </div>
+    </div>`);
+  document.getElementById("lbclose").addEventListener("click", closeLightbox);
+  document.getElementById("lbprev").addEventListener("click", ()=>navLightbox(-1));
+  document.getElementById("lbnext").addEventListener("click", ()=>navLightbox(1));
+  document.getElementById("lightbox").addEventListener("click", e=>{ if(e.target.id==="lightbox") closeLightbox(); });
+  let touchX=null;
+  const main = document.querySelector("#lightbox .lbmain");
+  main.addEventListener("touchstart", e=>{ touchX = e.touches[0].clientX; }, {passive:true});
+  main.addEventListener("touchend", e=>{
+    if(touchX===null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if(Math.abs(dx) > 40) navLightbox(dx < 0 ? 1 : -1);
+    touchX = null;
+  }, {passive:true});
+  document.addEventListener("keydown", e=>{
+    if(!document.getElementById("lightbox").classList.contains("open")) return;
+    if(e.key==="Escape") closeLightbox();
+    if(e.key==="ArrowLeft") navLightbox(-1);
+    if(e.key==="ArrowRight") navLightbox(1);
+  });
+}
+
+function openLightbox(momentIdx, photoIdx){
+  SOUV.momentIdx = momentIdx; SOUV.photoIdx = photoIdx;
+  document.getElementById("lightbox").classList.add("open");
+  document.body.style.overflow = "hidden";
+  renderLightboxPhoto();
+}
+function closeLightbox(){
+  document.getElementById("lightbox").classList.remove("open");
+  document.body.style.overflow = "";
+}
+function navLightbox(delta){
+  const m = SOUV.moments[SOUV.momentIdx];
+  if(!m) return;
+  SOUV.photoIdx = (SOUV.photoIdx + delta + m.photos.length) % m.photos.length;
+  renderLightboxPhoto();
+}
+function renderLightboxPhoto(){
+  const m = SOUV.moments[SOUV.momentIdx];
+  if(!m) return;
+  const p = m.photos[SOUV.photoIdx];
+  const place = p.place ? TRIP.places[p.place] : null;
+  document.getElementById("lbtitle").textContent = `${m.h.title} · ${SOUV.photoIdx+1}/${m.photos.length}`;
+  document.getElementById("lbimg").src = photoUrl(p.id, "full");
+  document.getElementById("lbcap").textContent = `${photoDate(p.ts)}${place ? " · "+place.n : ""}`;
+  const mapBtn = document.getElementById("lbmap");
+  mapBtn.style.display = place ? "" : "none";
+  mapBtn.onclick = ()=>{ closeLightbox(); jumpToPlaceOnMap(p.place); };
 }
 
 /* ---------- Persistance des cases à cocher ---------- */
@@ -367,6 +503,6 @@ function setupCulturalToggles(){
 /* ---------- Démarrage ---------- */
 document.addEventListener("DOMContentLoaded", ()=>{
   document.getElementById("subtitle").textContent = TRIP.meta.subtitle;
-  renderDays(); renderHighlights(); renderPractical(); renderMap();
+  renderDays(); renderHighlights(); renderSouvenirs(); renderPractical(); renderMap();
   setupTabs(); setupSearch(); setupAddrToggles(); setupCulturalToggles(); setupChecklists(); countdown(); setupToday(); registerSW();
 });
