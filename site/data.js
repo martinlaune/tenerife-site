@@ -138,6 +138,10 @@ const TRIP = {
       text:"Le Drago Milenario, la crique de Playa de San Marcos, puis une balade en forêt de pins près du volcan Chinyero.",
       list:["Vue gratuite sur le Drago depuis la Plaza Andrés de Lorenzo-Cáceres","Sable noir de San Marcos ramené en souvenir","Journée réorganisée sur le terrain (Barranco de Ruiz fermé)"],
       photos:["img_2345","img_2346","img_2347","img_2348","img_2349","img_2350","img_2351","img_2352","img_2353","img_2354","img_2355","img_2356","img_2357"] },
+    { id:"h10", day:"j11", scene:"cloudforest", cls:"h-palm", emoji:"🌳", when:"Mardi 7 juillet", title:"Bosque de los Enigmas",
+      text:"Boucle en forêt de laurisylve à Cruz del Carmen, avec ses panneaux-énigmes sur la forêt et sa faune — repérée par Alban sur AllTrails.",
+      list:["Parking Cruz del Carmen très limité, arrivée dès 9h30","Boucle familiale, ~2h","Enchaîné avec le Sendero de los Sentidos"],
+      photos:["img_2358","img_2359","img_2360","img_2361","img_2362","img_2363","img_2364","img_2365","img_2366","img_2367","img_2368","img_2369"] },
   ],
 
   practical: [
@@ -365,6 +369,18 @@ TRIP.photos = [
   {id:"img_2355",day:"j9",place:null,lat:28.377628,lon:-16.723836,ts:"2026-07-05 15:00:04"},
   {id:"img_2356",day:"j9",place:null,lat:28.324397,lon:-16.785436,ts:"2026-07-05 15:56:44"},
   {id:"img_2357",day:"j9",place:null,lat:28.324394,lon:-16.785325,ts:"2026-07-05 15:56:49"},
+  {id:"img_2358",day:"j11",place:"enigmas",lat:28.531067,lon:-16.282975,ts:"2026-07-07 10:16:24"},
+  {id:"img_2359",day:"j11",place:"enigmas",lat:28.531053,lon:-16.282956,ts:"2026-07-07 10:16:26"},
+  {id:"img_2360",day:"j11",place:"enigmas",lat:28.531053,lon:-16.282972,ts:"2026-07-07 10:16:30"},
+  {id:"img_2361",day:"j11",place:"enigmas",lat:28.531047,lon:-16.282972,ts:"2026-07-07 10:16:31"},
+  {id:"img_2362",day:"j11",place:"enigmas",lat:28.531006,lon:-16.282964,ts:"2026-07-07 10:16:55"},
+  {id:"img_2363",day:"j11",place:"enigmas",lat:28.529511,lon:-16.290719,ts:"2026-07-07 10:29:47"},
+  {id:"img_2364",day:"j11",place:"enigmas",lat:28.529525,lon:-16.290725,ts:"2026-07-07 10:29:54"},
+  {id:"img_2365",day:"j11",place:"enigmas",lat:28.528947,lon:-16.292469,ts:"2026-07-07 10:33:29"},
+  {id:"img_2366",day:"j11",place:"enigmas",lat:28.528947,lon:-16.292469,ts:"2026-07-07 10:33:32"},
+  {id:"img_2367",day:"j11",place:"enigmas",lat:28.528947,lon:-16.292469,ts:"2026-07-07 10:33:33"},
+  {id:"img_2368",day:"j11",place:"enigmas",lat:28.52655,lon:-16.280358,ts:"2026-07-07 12:02:50"},
+  {id:"img_2369",day:"j11",place:"enigmas",lat:28.52655,lon:-16.280358,ts:"2026-07-07 12:02:52"},
 ];
 
 /* Fiche "Adresses utiles" dans l'onglet Pratique */
