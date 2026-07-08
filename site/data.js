@@ -97,10 +97,11 @@ const TRIP = {
       notes:["SL-TF 81 : boucle 3,9 km, ~160 m de dénivelé, 1h-1h30 · télécharger la trace hors ligne","Chaussures fermées, eau, casquette, crème, Ventoline accessible pour Alban","Anticiper le stationnement à Aguamansa"] },
 
     { id:"j13", scene:"departure", emoji:"👋", dow:"Jeudi 9 juillet", title:"¡Hasta luego Tenerife !",
-      sum:"Matinée tranquille, route, envol le soir.",
-      obj:"Journée départ sans stress.",
-      sched:[["Matin","Petit-déj tranquille, dernières valises"],["—","Dernier regard sur l'île"],["~15h","Route vers l'aéroport Tenerife Sud"],["16h","Voiture rendue à Autoreisen"],["18h40","Décollage — au revoir Tenerife !"]],
-      notes:["Pas de grosse sortie le jour du départ","Vérifier qu'on n'oublie rien dans les chambres","Ventoline en cabine, pas en soute"] },
+      sum:"Piscine, check-out, Parc Taoro, déjeuner léger, puis Candelaria en route vers l'aéroport.",
+      obj:"Dernière matinée tranquille à l'hôtel, puis départ vers l'aéroport Tenerife Sud avec un arrêt à Candelaria sur la route.",
+      lunch:{name:"Alberto's Bar (Puerto de la Cruz)", planB:"—", budget:"léger", note:"repas léger avant la route"},
+      sched:[["8h30","Réveil, petit-déjeuner"],["11h00","Dernière baignade à la piscine de l'hôtel"],["~11h30","Check-out, bagages dans la voiture"],["~11h45","Balade au Parc Taoro, juste en face de l'hôtel","Ce parc paysager du XIXe siècle, aménagé autour de l'ancien Gran Hotel Taoro, offre l'une des plus belles vues sur la baie de Puerto de la Cruz."],["12h00","Déjeuner léger à Alberto's Bar"],["13h00","Route vers l'aéroport Tenerife Sud, via Candelaria"],["~14h00","Arrêt à Candelaria : statues des rois guanches & basilique (20-30 min)","Neuf statues en bronze des menceyes (rois guanches) se dressent face à l'océan sur la place de la basilique, qui abrite la Vierge de Candelaria, patronne des Canaries."],["16h","Voiture rendue à Autoreisen"],["18h40","Décollage — au revoir Tenerife !"]],
+      notes:["Pas de grosse sortie le jour du départ","Candelaria : arrêt court et flexible, sur la route, gratuit et en plein air","Vérifier qu'on n'oublie rien dans les chambres","Ventoline en cabine, pas en soute"] },
   ],
 
   highlights: [
@@ -173,6 +174,9 @@ const TRIP = {
 TRIP.places = {
   tigaiga:   { n:"Hotel Tigaiga",                a:"Ctra. Taoro 28, Puerto de la Cruz",        ll:"28.4103498,-16.549232" },
   tfs:       { n:"Aéroport Tenerife Sud (TFS)",  a:"Reina Sofía, Granadilla de Abona",         ll:"28.0445,-16.5725" },
+  taoro:     { n:"Parque Taoro",                 a:"Altos del Taoro, Puerto de la Cruz",       ll:"28.4125,-16.5478" },
+  alberto:   { n:"Alberto's Bar",                a:"Vía de Malpaís 1, Puerto de la Cruz",      ll:"Alberto's Bar, Vía de Malpaís 1, Puerto de la Cruz" },
+  candelaria:{ n:"Basílica de Candelaria",        a:"Plaza de la Patrona de Canarias 1, Candelaria", ll:"Basílica de Candelaria, Candelaria, Tenerife" },
   botanico:  { n:"Jardín Botánico",              a:"C. Retama 2, Puerto de la Cruz",           ll:"28.4115604,-16.5358112" },
   oliva:     { n:"Restaurante Oliva",            a:"C. Retama 3, Puerto de la Cruz",           ll:"28.4120344,-16.5361122" },
   panadero:  { n:"La Casa del Panadero",         a:"C. la Hoya 23, Puerto de la Cruz",         ll:"28.4168231,-16.5466735" },
@@ -241,7 +245,7 @@ TRIP.dayPlaces = {
   j10:["parkinglg","flipper","archipenque"],
   j11:["enigmas","sentidos","tajaque","gelataio"],
   j12:["aguamansa","humboldt"],
-  j13:["tfs"],
+  j13:["taoro","alberto","candelaria","tfs"],
 };
 
 /* Photos de vacances (GPS+date EXIF), mode Souvenir. Fichiers : site/photos/full|thumb/<id>.webp */
@@ -390,6 +394,9 @@ TRIP.practical.push({ icon:"📍", title:"Adresses utiles (GPS)", addrs:["tigaig
 const PLACE_INFO = {
   tigaiga:   { d:"Notre hôtel, perché sur la colline de Taoro avec vue sur le Teide ; jardins et piscine." },
   tfs:       { d:"L'aéroport au sud de l'île (Reina Sofía) : arrivée et départ." },
+  taoro:     { d:"Grand parc paysager du XIXe siècle autour de l'ancien Gran Hotel Taoro ; vue sur la baie, cascades et fontaines.", h:"Accès libre" },
+  alberto:   { d:"Bar-cafétéria très apprécié des locaux, bonne ambiance et cocktails.", h:"4,6/5 sur 1520 avis Google" },
+  candelaria:{ d:"Neuf statues en bronze des rois guanches face à l'océan ; basilique de la patronne des Canaries.", h:"Mar-dim 8h-19h30 · lun 15h-19h30 · accès à la place libre" },
   botanico:  { d:"Jardin de 1788 rempli de plantes tropicales géantes ; balade ombragée d'environ 1h.", h:"9h–18h tous les jours · ~3 €" },
   oliva:     { d:"Petit resto de quartier réputé pour ses escalopes (schnitzel) et ses portions généreuses.", h:"13h–21h · fermé mer & jeu" },
   panadero:  { d:"Boulangerie artisanale : croissants et bocadillos parfaits à emporter pour le Teide.", h:"7h30–15h30 tous les jours" },
@@ -451,6 +458,9 @@ for(const k in PLACE_INFO){ if(TRIP.places[k]) Object.assign(TRIP.places[k], PLA
 const PLACE_EXTRA = {
   tigaiga:   { tel:"+34922383500", pid:"ChIJNcVTz-1_agwRYaE2s17eQWQ" },
   tfs:       {},
+  taoro:     {},
+  alberto:   { tel:"+34922386061" },
+  candelaria:{},
   botanico:  { tel:"+34922922981", pid:"ChIJs_1sk_V_agwRADt4EGcuL-k" },
   oliva:     { tel:"+34922373904", pid:"ChIJrUp_kfV_agwRrDiVounqfaw" },
   panadero:  { pid:"ChIJxfSM7lN_agwRqJfmLQZn4BM" },
