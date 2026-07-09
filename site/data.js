@@ -177,7 +177,7 @@ TRIP.places = {
   autoreisen:{ n:"Autoreisen — retour véhicule", a:"Parking de coches de alquiler, Aeropuerto Tenerife Sur, San Isidro, Granadilla de Abona", ll:"Parking de coches de alquiler, Aeropuerto Tenerife Sur" },
   taoro:     { n:"Parque Taoro",                 a:"Altos del Taoro, Puerto de la Cruz",       ll:"28.4125,-16.5478" },
   alberto:   { n:"Alberto's Bar",                a:"Vía de Malpaís 1, Puerto de la Cruz",      ll:"Alberto's Bar, Vía de Malpaís 1, Puerto de la Cruz" },
-  candelaria:{ n:"Basílica de Candelaria",        a:"Plaza de la Patrona de Canarias 1, Candelaria", ll:"Basílica de Candelaria, Candelaria, Tenerife" },
+  candelaria:{ n:"Statues des Menceyes — Plaza de la Patrona de Canarias", a:"Plaza de la Patrona de Canarias 1, Candelaria (face à l'océan, devant la basilique)", ll:"28.351256,-16.369908" },
   botanico:  { n:"Jardín Botánico",              a:"C. Retama 2, Puerto de la Cruz",           ll:"28.4115604,-16.5358112" },
   oliva:     { n:"Restaurante Oliva",            a:"C. Retama 3, Puerto de la Cruz",           ll:"28.4120344,-16.5361122" },
   panadero:  { n:"La Casa del Panadero",         a:"C. la Hoya 23, Puerto de la Cruz",         ll:"28.4168231,-16.5466735" },
