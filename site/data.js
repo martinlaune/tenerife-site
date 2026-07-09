@@ -100,7 +100,7 @@ const TRIP = {
       sum:"Piscine, check-out, Parc Taoro, déjeuner léger, puis Candelaria en route vers l'aéroport.",
       obj:"Dernière matinée tranquille à l'hôtel, puis départ vers l'aéroport Tenerife Sud avec un arrêt à Candelaria sur la route.",
       lunch:{name:"Alberto's Bar (Puerto de la Cruz)", planB:"—", budget:"léger", note:"repas léger avant la route"},
-      sched:[["8h30","Réveil, petit-déjeuner"],["11h00","Dernière baignade à la piscine de l'hôtel"],["~11h30","Check-out, bagages dans la voiture"],["~11h45","Balade au Parc Taoro, juste en face de l'hôtel","Ce parc paysager du XIXe siècle, aménagé autour de l'ancien Gran Hotel Taoro, offre l'une des plus belles vues sur la baie de Puerto de la Cruz."],["12h00","Déjeuner léger à Alberto's Bar"],["13h00","Route vers l'aéroport Tenerife Sud, via Candelaria"],["~14h00","Arrêt à Candelaria : statues des rois guanches & basilique (20-30 min)","Neuf statues en bronze des menceyes (rois guanches) se dressent face à l'océan sur la place de la basilique, qui abrite la Vierge de Candelaria, patronne des Canaries."],["16h","Voiture rendue à Autoreisen"],["18h40","Décollage — au revoir Tenerife !"]],
+      sched:[["8h30","Réveil, petit-déjeuner"],["11h00","Dernière baignade à la piscine de l'hôtel"],["~11h30","Check-out, bagages dans la voiture"],["~11h45","Balade au Parc Taoro, juste en face de l'hôtel","Ce parc paysager du XIXe siècle, aménagé autour de l'ancien Gran Hotel Taoro, offre l'une des plus belles vues sur la baie de Puerto de la Cruz."],["12h00","Déjeuner léger à Alberto's Bar"],["13h00","Route vers l'aéroport Tenerife Sud, via Candelaria"],["~14h00","Arrêt à Candelaria : statues des rois guanches & basilique (20-30 min)","Neuf statues en bronze des menceyes (rois guanches) se dressent face à l'océan sur la place de la basilique, qui abrite la Vierge de Candelaria, patronne des Canaries."],["16h","Voiture rendue à Autoreisen (à l'intérieur de l'aéroport, panneaux « Rent a Car »)"],["18h40","Décollage — au revoir Tenerife !"]],
       notes:["Pas de grosse sortie le jour du départ","Candelaria : arrêt court et flexible, sur la route, gratuit et en plein air","Vérifier qu'on n'oublie rien dans les chambres","Ventoline en cabine, pas en soute"] },
   ],
 
@@ -174,6 +174,7 @@ const TRIP = {
 TRIP.places = {
   tigaiga:   { n:"Hotel Tigaiga",                a:"Ctra. Taoro 28, Puerto de la Cruz",        ll:"28.4103498,-16.549232" },
   tfs:       { n:"Aéroport Tenerife Sud (TFS)",  a:"Reina Sofía, Granadilla de Abona",         ll:"28.0445,-16.5725" },
+  autoreisen:{ n:"Autoreisen — retour véhicule", a:"Aeropuerto Tenerife Sur S/N, San Isidro, Granadilla de Abona (à l'intérieur de l'aéroport)", ll:"28.0445,-16.5725" },
   taoro:     { n:"Parque Taoro",                 a:"Altos del Taoro, Puerto de la Cruz",       ll:"28.4125,-16.5478" },
   alberto:   { n:"Alberto's Bar",                a:"Vía de Malpaís 1, Puerto de la Cruz",      ll:"Alberto's Bar, Vía de Malpaís 1, Puerto de la Cruz" },
   candelaria:{ n:"Basílica de Candelaria",        a:"Plaza de la Patrona de Canarias 1, Candelaria", ll:"Basílica de Candelaria, Candelaria, Tenerife" },
@@ -245,7 +246,7 @@ TRIP.dayPlaces = {
   j10:["parkinglg","flipper","archipenque"],
   j11:["enigmas","sentidos","tajaque","gelataio"],
   j12:["aguamansa","humboldt"],
-  j13:["taoro","alberto","candelaria","tfs"],
+  j13:["taoro","alberto","candelaria","autoreisen","tfs"],
 };
 
 /* Photos de vacances (GPS+date EXIF), mode Souvenir. Fichiers : site/photos/full|thumb/<id>.webp */
@@ -394,6 +395,7 @@ TRIP.practical.push({ icon:"📍", title:"Adresses utiles (GPS)", addrs:["tigaig
 const PLACE_INFO = {
   tigaiga:   { d:"Notre hôtel, perché sur la colline de Taoro avec vue sur le Teide ; jardins et piscine." },
   tfs:       { d:"L'aéroport au sud de l'île (Reina Sofía) : arrivée et départ." },
+  autoreisen:{ d:"Comptoir + parking loueur, à l'intérieur du complexe aéroportuaire — suivre les panneaux « Rent a Car / Devolución de vehículos ».", h:"Adresse administrative : Local E01P000809, 38611 San Isidro" },
   taoro:     { d:"Grand parc paysager du XIXe siècle autour de l'ancien Gran Hotel Taoro ; vue sur la baie, cascades et fontaines.", h:"Accès libre" },
   alberto:   { d:"Bar-cafétéria très apprécié des locaux, bonne ambiance et cocktails.", h:"4,6/5 sur 1520 avis Google" },
   candelaria:{ d:"Neuf statues en bronze des rois guanches face à l'océan ; basilique de la patronne des Canaries.", h:"Mar-dim 8h-19h30 · lun 15h-19h30 · accès à la place libre" },
@@ -458,6 +460,7 @@ for(const k in PLACE_INFO){ if(TRIP.places[k]) Object.assign(TRIP.places[k], PLA
 const PLACE_EXTRA = {
   tigaiga:   { tel:"+34922383500", pid:"ChIJNcVTz-1_agwRYaE2s17eQWQ" },
   tfs:       {},
+  autoreisen:{ tel:"+34922260200" },
   taoro:     {},
   alberto:   { tel:"+34922386061" },
   candelaria:{},
