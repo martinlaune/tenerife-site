@@ -174,7 +174,7 @@ const TRIP = {
 TRIP.places = {
   tigaiga:   { n:"Hotel Tigaiga",                a:"Ctra. Taoro 28, Puerto de la Cruz",        ll:"28.4103498,-16.549232" },
   tfs:       { n:"Aéroport Tenerife Sud (TFS)",  a:"Reina Sofía, Granadilla de Abona",         ll:"28.0445,-16.5725" },
-  autoreisen:{ n:"Autoreisen — retour véhicule", a:"Aeropuerto Tenerife Sur S/N, San Isidro, Granadilla de Abona (à l'intérieur de l'aéroport)", ll:"28.0445,-16.5725" },
+  autoreisen:{ n:"Autoreisen — retour véhicule", a:"Parking de coches de alquiler, Aeropuerto Tenerife Sur, San Isidro, Granadilla de Abona", ll:"Parking de coches de alquiler, Aeropuerto Tenerife Sur" },
   taoro:     { n:"Parque Taoro",                 a:"Altos del Taoro, Puerto de la Cruz",       ll:"28.4125,-16.5478" },
   alberto:   { n:"Alberto's Bar",                a:"Vía de Malpaís 1, Puerto de la Cruz",      ll:"Alberto's Bar, Vía de Malpaís 1, Puerto de la Cruz" },
   candelaria:{ n:"Basílica de Candelaria",        a:"Plaza de la Patrona de Canarias 1, Candelaria", ll:"Basílica de Candelaria, Candelaria, Tenerife" },
@@ -395,7 +395,7 @@ TRIP.practical.push({ icon:"📍", title:"Adresses utiles (GPS)", addrs:["tigaig
 const PLACE_INFO = {
   tigaiga:   { d:"Notre hôtel, perché sur la colline de Taoro avec vue sur le Teide ; jardins et piscine." },
   tfs:       { d:"L'aéroport au sud de l'île (Reina Sofía) : arrivée et départ." },
-  autoreisen:{ d:"Comptoir + parking loueur, à l'intérieur du complexe aéroportuaire — suivre les panneaux « Rent a Car / Devolución de vehículos ».", h:"Adresse administrative : Local E01P000809, 38611 San Isidro" },
+  autoreisen:{ d:"Zone extérieure du terminal dédiée aux loueurs (AENA) ; Autoreisen y a aussi des comptoirs en Planta 0 et Planta 1.", h:"Tél. comptoirs : +34 922 39 22 16 / +34 922 75 93 64" },
   taoro:     { d:"Grand parc paysager du XIXe siècle autour de l'ancien Gran Hotel Taoro ; vue sur la baie, cascades et fontaines.", h:"Accès libre" },
   alberto:   { d:"Bar-cafétéria très apprécié des locaux, bonne ambiance et cocktails.", h:"4,6/5 sur 1520 avis Google" },
   candelaria:{ d:"Neuf statues en bronze des rois guanches face à l'océan ; basilique de la patronne des Canaries.", h:"Mar-dim 8h-19h30 · lun 15h-19h30 · accès à la place libre" },
