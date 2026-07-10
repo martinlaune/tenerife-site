@@ -182,11 +182,13 @@ function dayCard(d){
 
 function renderDays(){
   const root = document.getElementById("v-jours");
+  if(!root) return;
   TRIP.days.forEach(d => root.appendChild(dayCard(d)));
 }
 
 function renderHighlights(){
   const root = document.getElementById("v-forts");
+  if(!root) return;
   root.innerHTML = TRIP.highlights.map(h=>`
     <div class="hcard ${h.cls}">
       <div class="hillu">${sceneFor(h)}</div>
@@ -198,6 +200,7 @@ function renderHighlights(){
 
 function renderPractical(){
   const root = document.getElementById("v-pratique");
+  if(!root) return;
   let html = "";
   TRIP.practical.forEach(p=>{
     html += `<div class="panel ${p.warn?'warn':''}"><h3>${p.icon} ${esc(p.title)}</h3>`;
