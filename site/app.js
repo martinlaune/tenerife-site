@@ -344,7 +344,7 @@ function souvenirMoments(){
     .filter(h=>h.photos && h.photos.length)
     .map(h=>({ h, photos: h.photos.map(id=>byId[id]).filter(Boolean) }))
     .filter(m=>m.photos.length)
-    .sort((a,b)=>parseInt((a.h.day||"j99").slice(1)) - parseInt((b.h.day||"j99").slice(1)));
+    .sort((a,b)=>(a.h.day||"9999-99-99").localeCompare(b.h.day||"9999-99-99"));
 }
 
 function renderSouvenirs(){
