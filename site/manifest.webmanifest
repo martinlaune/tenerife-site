@@ -1,7 +1,7 @@
 {
-  "name": "Tenerife 2026 — Carnet de la famille",
-  "short_name": "Tenerife",
-  "description": "Le programme complet de nos vacances à Tenerife.",
+  "name": "Souvenirs de Vacances",
+  "short_name": "Souvenirs",
+  "description": "Les souvenirs de vacances de la famille — un voyage à la fois.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

@@ -24,6 +24,19 @@ img{display:block;max-width:100%}
   border-radius:16px;padding:11px 15px;display:flex;align-items:center;gap:12px}
 .countdown .big{font-size:1.9rem;font-weight:800;line-height:1}
 .countdown .lab{font-size:.85rem;font-weight:700;opacity:.95}
+.switch-trip{position:absolute;top:calc(var(--st) + 16px);right:16px;z-index:1;
+  background:rgba(255,255,255,.22);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  color:#fff;text-decoration:none;font-size:.72rem;font-weight:800;padding:6px 11px;border-radius:12px}
+
+/* sélecteur de voyage (page d'accueil) */
+.trip-picker{padding:18px 14px 28px;display:flex;flex-direction:column;gap:14px}
+.trip-card{display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;
+  background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px 18px;
+  text-decoration:none;color:var(--ink);box-shadow:0 6px 18px var(--shadow)}
+.trip-card:active{background:#F3EFE4}
+.tc-emoji{font-size:2.6rem;line-height:1}
+.tc-title{font-size:1.3rem;font-weight:800;margin-top:4px}
+.tc-dates{font-size:.85rem;font-weight:700;color:var(--muted)}
 
 /* search */
 .searchbar{position:sticky;top:0;z-index:20;background:rgba(253,247,236,.95);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);

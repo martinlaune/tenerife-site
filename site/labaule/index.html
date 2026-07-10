@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>La Baule 2026 — Souvenirs de Vacances</title>
+<meta name="description" content="Les souvenirs de nos vacances à La Baule.">
+<meta name="theme-color" content="#2AA6C9">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="La Baule">
+<link rel="apple-touch-icon" href="../icons/icon-180.png">
+<link rel="icon" type="image/png" href="../icons/icon-192.png">
+<link rel="stylesheet" href="../styles.css">
+<script>
+if("serviceWorker" in navigator){navigator.serviceWorker.getRegistrations().then(function(r){r.forEach(function(reg){reg.unregister()})});if(typeof caches!=="undefined"){caches.keys().then(function(k){k.forEach(function(n){caches.delete(n)})})}}
+</script>
+</head>
+<body>
+<div class="app">
+
+  <header class="top">
+    <div class="sun"></div>
+    <a class="switch-trip" href="../index.html">🔄 Changer de voyage</a>
+    <div class="eyebrow">Carnet de voyage</div>
+    <h1>La Baule 🏖️</h1>
+    <div class="sub" id="subtitle">12 → 17 juillet 2026</div>
+    <div class="countdown"><div class="big" id="cd-num">–</div><div class="lab" id="cd-lab">…</div></div>
+  </header>
+
+  <div class="searchbar">
+    <div class="field"><span class="ico">🔎</span>
+      <input id="search" type="search" placeholder="Rechercher un lieu, un moment…" autocomplete="off" autocapitalize="off">
+    </div>
+    <div class="results" id="results"></div>
+  </div>
+
+  <nav class="tabs">
+    <button class="tab active" data-v="souvenirs">📸 Souvenirs</button>
+    <button class="tab" data-v="carte">🗺️ Carte</button>
+  </nav>
+
+  <section class="view active" id="v-souvenirs"></section>
+  <section class="view" id="v-carte"></section>
+
+</div>
+
+<script src="data.js?v=1"></script>
+<script src="../app.js?v=10"></script>
+</body>
+</html>
