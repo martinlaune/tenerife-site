@@ -9,7 +9,8 @@ const TRIP = {
     start: "2026-06-27T17:10:00",
     end:   "2026-07-09T18:40:00",
     hotel: "Hotel Tigaiga — Puerto de la Cruz",
-    subtitle: "27 juin → 9 juillet 2026"
+    subtitle: "27 juin → 9 juillet 2026",
+    mapShape: "tenerife"
   },
 
   days: [

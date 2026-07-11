@@ -298,18 +298,38 @@ function registerSW(){
 function renderMap(){
   const root = document.getElementById("v-carte");
   if(!root) return;
-  const LNGMIN=-16.95, LNGMAX=-16.06, LATMIN=27.99, LATMAX=28.60, W=360, H=240, PAD=10;
+  const W=360, H=240, PAD=10;
+  const hasCoords=ll=>/^-?\d+(\.\d+)?,-?\d+(\.\d+)?$/.test(ll);
+  const placeKeys = Object.keys(TRIP.places).filter(k=>hasCoords(TRIP.places[k].ll));
+  const isTenerife = TRIP.meta.mapShape === "tenerife";
+
+  let LNGMIN, LNGMAX, LATMIN, LATMAX;
+  if(isTenerife){
+    LNGMIN=-16.95; LNGMAX=-16.06; LATMIN=27.99; LATMAX=28.60;
+  } else if(placeKeys.length){
+    const lats = placeKeys.map(k=>parseFloat(TRIP.places[k].ll.split(",")[0]));
+    const lons = placeKeys.map(k=>parseFloat(TRIP.places[k].ll.split(",")[1]));
+    const padLat = (Math.max(...lats)-Math.min(...lats))*0.25 || 0.02;
+    const padLon = (Math.max(...lons)-Math.min(...lons))*0.25 || 0.02;
+    LATMIN=Math.min(...lats)-padLat; LATMAX=Math.max(...lats)+padLat;
+    LNGMIN=Math.min(...lons)-padLon; LNGMAX=Math.max(...lons)+padLon;
+  } else {
+    LNGMIN=-1; LNGMAX=1; LATMIN=-1; LATMAX=1;
+  }
   const X=ll=>(PAD+(parseFloat(ll.split(",")[1])-LNGMIN)/(LNGMAX-LNGMIN)*(W-2*PAD));
   const Y=ll=>(PAD+(LATMAX-parseFloat(ll.split(",")[0]))/(LATMAX-LATMIN)*(H-2*PAD));
-  const island="M22,112 Q60,80 95,82 Q150,66 200,42 L262,26 Q236,64 220,118 Q196,170 156,214 Q120,176 100,168 Q66,150 52,140 Q30,128 22,112 Z";
-  const hasCoords=ll=>/^-?\d+(\.\d+)?,-?\d+(\.\d+)?$/.test(ll);
-  const dots=Object.keys(TRIP.places).filter(k=>hasCoords(TRIP.places[k].ll)).map(k=>{const p=TRIP.places[k];
+  const island = isTenerife ? `<path d="M22,112 Q60,80 95,82 Q150,66 200,42 L262,26 Q236,64 220,118 Q196,170 156,214 Q120,176 100,168 Q66,150 52,140 Q30,128 22,112 Z" class="island"/>` : "";
+  const teide = isTenerife ? `<polygon points="128,121 119,135 137,135" class="teide-mk"/>` : "";
+  const dots=placeKeys.map(k=>{const p=TRIP.places[k];
     return `<circle class="mdot" data-k="${k}" cx="${X(p.ll).toFixed(1)}" cy="${Y(p.ll).toFixed(1)}" r="5"><title>${esc(p.n)}</title></circle>`;}).join("");
+  const caption = placeKeys.length
+    ? "Touche un point — ou un lieu dans la liste — pour le situer et lancer l'itinéraire."
+    : "Aucun lieu enregistré pour le moment — la carte se remplira au fil du séjour.";
   root.innerHTML = `
-    <div class="mapcap" id="mapcap">Touche un point — ou un lieu dans la liste — pour le situer et lancer l'itinéraire.</div>
+    <div class="mapcap" id="mapcap">${caption}</div>
     <div class="mapwrap"><svg viewBox="0 0 ${W} ${H}" class="mapsvg" xmlns="http://www.w3.org/2000/svg">
-      <path d="${island}" class="island"/>
-      <polygon points="128,121 119,135 137,135" class="teide-mk"/>
+      ${island}
+      ${teide}
       ${dots}
     </svg></div>
     <div class="maplist">${Object.keys(TRIP.places).map(k=>`<button class="mli" data-k="${k}" type="button">📍 ${esc(TRIP.places[k].n)}</button>`).join("")}</div>`;
