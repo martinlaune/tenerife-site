@@ -218,7 +218,7 @@ function renderPractical(){
     if(p.contacts) html += p.contacts.map(contactRow).join("");
     html += `</div>`;
   });
-  html += `<div class="foot">Bon voyage la famille 🏝️ · Tenerife 2026</div>`;
+  html += `<div class="foot">Bon voyage la famille 🏝️ · ${esc(TRIP.meta.title)}</div>`;
   root.innerHTML = html;
 }
 

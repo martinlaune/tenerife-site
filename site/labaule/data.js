@@ -17,7 +17,64 @@ const TRIP = {
 
   highlights: [],
 
-  practical: [],
+  practical: [
+    {
+      icon: "🎒", title: "Valise Alban", check: true,
+      list: [
+        "T-shirts, shorts, pantalon léger",
+        "Maillot de bain",
+        "Sweat / veste légère pour le soir",
+        "Pyjama",
+        "Sous-vêtements & chaussettes",
+        "Baskets + tongs/sandales",
+        "Trousse de toilette (brosse à dents, gel douche, déodorant)",
+        "Casquette + lunettes de soleil + crème solaire",
+        "Chargeur de téléphone",
+        "Livre / jeux pour la route"
+      ]
+    },
+    {
+      icon: "🎒", title: "Valise Vianney", check: true, warn: true,
+      list: [
+        "⚠️ Ventoline — toujours en cabine/sac à main, jamais en soute",
+        "T-shirts, shorts, pantalon léger",
+        "Maillot de bain",
+        "Sweat / veste légère pour le soir",
+        "Pyjama",
+        "Sous-vêtements & chaussettes",
+        "Baskets + tongs/sandales",
+        "Trousse de toilette (brosse à dents, gel douche, déodorant)",
+        "Casquette + lunettes de soleil + crème solaire",
+        "Doudou / jeux pour la route"
+      ]
+    },
+    {
+      icon: "🧳", title: "Valise Maman", check: true,
+      list: [
+        "Tenues pour la semaine + une tenue habillée",
+        "Maillot de bain + paréo/sortie de bain",
+        "Trousse de toilette + maquillage",
+        "Crème solaire + après-soleil",
+        "Médicaments habituels + ordonnances",
+        "Carnet de santé des enfants",
+        "Chargeurs (téléphone, montre…)",
+        "Livre / de quoi lire à la plage"
+      ]
+    },
+    {
+      icon: "🧳", title: "Valise Papa", check: true,
+      list: [
+        "Tenues pour la semaine + une tenue habillée",
+        "Maillot de bain",
+        "Trousse de toilette + rasoir",
+        "Crème solaire",
+        "Médicaments habituels",
+        "Papiers de la voiture (carte grise, permis, assurance)",
+        "Chargeurs + adaptateurs",
+        "Appareil photo / batterie externe"
+      ]
+    }
+  ],
 
   places: {},
 };
