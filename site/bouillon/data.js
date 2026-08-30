@@ -61,14 +61,15 @@ const TRIP = {
         ["09h00","Réveil, petit-déjeuner","Boulangerie fermée le lundi — pain acheté la veille"],
         ["09h30","Départ vers Nafraiture","≈20-22 min"],
         ["09h50","Luna et les Gardiens — parcours Vresse/Nafraiture","≈2,2 km / +55 m (chiffre plausible mais non confirmé par une fiche officielle dédiée) · personnage Pépé Crochet, forêt + eau"],
-        ["11h00","Fin du parcours, retour vers le gîte"],
+        ["11h00","Point de vue du Jambon (Membre-Bohan)","Même secteur que Nafraiture, ≈10 min de route · nouvelle plateforme en acier Corten (rénovée 2025/2026) en porte-à-faux sur le méandre, parking juste à côté, aucune marche nécessaire · ≈15-20 min sur place"],
+        ["11h30","Retour vers le gîte"],
         ["13h00","Après-midi libre : jeux, lecture, repos","Volontairement sans deuxième balade, pour ne pas cumuler deux sorties à pied avant la nocturne"],
         ["18h00","Dîner avancé au gîte","Horaire à ajuster une fois l'heure exacte de la nocturne connue"],
         ["18h45","Départ vers le château","Nuit déjà tombée — coucher du soleil 18h42 ce jour-là"],
         ["? à confirmer","Visite nocturne aux flambeaux","Date confirmée (19 et 20 octobre sont les deux seules dates de la fenêtre) mais heure de départ précise non publiée en clair — à obtenir en réservant. Comptez ≈1h de visite"],
         ["≈21h00","Retour au gîte, coucher"]
       ],
-      notes:["Aucune date de battue 2026 n'est publiée à ce jour pour Nafraiture — si le sentier est fermé, basculer sur le Luna d'Herbeumont, déjà identifié comme repli","La nocturne se déroule en grande partie à l'abri dans les tours et logis du fort — prévoir des vêtements de pluie plutôt qu'envisager une annulation","Ne pas ajouter la Promenade des Légendes de Laforêt ce jour-là"] },
+      notes:["Aucune date de battue 2026 n'est publiée à ce jour pour Nafraiture — si le sentier est fermé, basculer sur le Luna d'Herbeumont, déjà identifié comme repli","La nocturne se déroule en grande partie à l'abri dans les tours et logis du fort — prévoir des vêtements de pluie plutôt qu'envisager une annulation","Ne pas ajouter la Promenade des Légendes de Laforêt ce jour-là","En option si le temps le permet : le Pont de Claies de Laforêt (≈10 min du Jambon) est une passerelle en bois saisonnière, démontée à l'automne selon le niveau de l'eau — pas de date fixe, elle est peut-être déjà démontée à ces dates. Vérifier par téléphone avant de s'y arrêter (Centre Touristique de Vresse-sur-Semois, +32 61 29 28 27)"] },
 
     { id:"b4", scene:"cliffs", emoji:"🪨", dow:"Mardi 20 octobre", title:"Rochehaut, le Géant, la passerelle et les fées",
       sum:"Boucle de points de vue et légendes autour du gîte, peu de marche.",
@@ -152,6 +153,10 @@ const TRIP = {
       d:"Rocher et cavité associés aux légendes locales de fées, de diables et de nutons, avec un petit ruisseau qui marque la frontière franco-belge. Boucle courte n°14 depuis la place du village : 2 km, 30 min officielles (prévoir 45 min à 1h avec pauses), facile. Ne pas confondre avec la grande randonnée « Sur les pas de Verlaine », plus longue. Parking sur la place du village, point de départ de la boucle.", url:"https://corbionsursemois.be/walk/la-roche-des-fees/", urlLabel:"Voir le tracé" },
     nafraiture: { n:"Nafraiture", a:"6830 Nafraiture", ll:"49.91182,4.92589",
       d:"Parcours en réalité augmentée (appli gratuite « Luna et les Gardiens ») avec le personnage Pépé Crochet, à travers forêt et cours d'eau. ≈2,2 km / +55 m (chiffres plausibles mais non confirmés par une fiche officielle dédiée), facile, ≈1h à 1h30 de jeu. Départ et parking dans le village.", url:"https://www.lunaetlesgardiens.be/vresse-1", urlLabel:"App Luna (Vresse)" },
+    jambon:     { n:"Point de vue du Jambon", a:"Entre Membre et Bohan, 5550 Vresse-sur-Semois", ll:"49.9057,4.8697",
+      d:"L'un des points de vue les plus réputés du parc : une boucle de la Semois en forme de « jambon » vue d'en haut. Entièrement rénové en 2025/2026 avec une nouvelle plateforme en acier Corten en porte-à-faux au-dessus du vide. Parking directement à côté de la plateforme, pensé pour un accès rapide et facile (y compris à mobilité réduite) — aucune marche nécessaire, comptez 15-20 min sur place. Deux sentiers balisés plus longs partent aussi d'ici pour qui veut prolonger.", url:"https://www.semois-parcnational.be/le-point-de-vue-du-jambon", urlLabel:"Infos site" },
+    claies:     { n:"Pont de Claies de Laforêt (en option)", a:"Rue du Pont de Claies, 5550 Laforêt (Vresse-sur-Semois)", ll:"49.8890,4.8886", tel:"+3261292827",
+      d:"Passerelle en bois tressé (branches d'aulne/charme/chêne sur pieux), 80 m de long, unique en Belgique — héritage des anciens planteurs de tabac. ⚠️ Structure saisonnière : montée en juin, démontée à l'automne selon le niveau de l'eau, sans date fixe (déjà démontée dès le 16 octobre certaines années). Rien ne garantit qu'elle soit encore en place le 19 octobre 2026 — appeler avant de s'y arrêter. Si elle y est : quelques pas depuis le parking jusqu'au pont, ou boucle balisée de 3,5 km/50 min si vous voulez en faire une vraie balade.", url:"https://www.semois-parcnational.be/pont-de-claies-laforet", urlLabel:"Infos site" },
     gite:       { n:"Le P'tit Nid", a:"27-29 rue des Lavandières, 6830 Poupehan", ll:"49.7835,5.0281", h:"Check-in 16h, check-out 11h" },
     aldi:       { n:"ALDI Bouillon/Noirefontaine", a:"Rue de la Sentinelle 66, 6831 Noirefontaine", ll:"49.7965,5.0140", h:"Lun-Sam 8h30-19h, fermé dimanche",
       d:"Parking sur place, devant le magasin." },
@@ -165,7 +170,7 @@ const TRIP = {
 TRIP.dayPlaces = {
   b1: ["gite","aldi","carrefour","rochehaut","chateau"],
   b2: ["chateau","arboretum","belvedere"],
-  b3: ["nafraiture","chateau"],
+  b3: ["nafraiture","jambon","claies","chateau"],
   b4: ["rochehaut","boulangerie","botassart","cordemois","corbion"],
   b5: ["gite"],
 };
