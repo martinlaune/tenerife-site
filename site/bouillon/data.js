@@ -24,16 +24,18 @@ const TRIP = {
       sched:[
         ["08h30","Départ de Sailly-lez-Lannoy","Trajet non revérifié cette session (≈2h à 2h30 selon l'itinéraire réel) — à confirmer sur GPS le jour même"],
         ["≈10h45","Arrivée région de Bouillon"],
-        ["12h00","Courses ALDI Bouillon/Noirefontaine","Rue de la Sentinelle 66 · ouvert samedi 8h30-19h"],
-        ["12h45","Complément Carrefour Market (100 m à côté)","Ouverture réelle probablement 9h00, pas 8h30 — à confirmer au 061 61 42 01"],
-        ["13h45","Rochehaut / panorama sur Frahan en attendant le check-in","≈5-6 min du gîte, 20-30 min sur place"],
-        ["16h00","Check-in — Le P'tit Nid, Poupehan"],
+        ["11h00","Pause déjeuner / pique-nique"],
+        ["12h00","Rochehaut / panorama sur Frahan","≈5-6 min du gîte, 20-30 min sur place — avant les courses, tant que le coffre est encore vide"],
+        ["14h30","Courses ALDI Bouillon/Noirefontaine","Rue de la Sentinelle 66 · ouvert samedi 8h30-19h"],
+        ["15h15","Complément Carrefour Market (100 m à côté)","Ouverture réelle probablement 9h00, pas 8h30 — à confirmer au 061 61 42 01"],
+        ["16h00","Check-in — Le P'tit Nid, Poupehan","Direct après les courses, pour limiter le temps du frais dans le coffre"],
+        ["16h15","Installation, rangement des courses au frigo"],
         ["17h30","Dîner léger et rapide au gîte"],
         ["18h30","Départ vers le château (parking centre-ville)"],
         ["19h15","Odyssée de Lumière","Présence 30 min avant conseillée · horaire confirmé pour la période 15/10-11/11 · réservation obligatoire, accessible uniquement via le City Pass+"],
         ["≈20h30","Retour au gîte, coucher"]
       ],
-      notes:["Si le trajet a pris du retard ou que l'installation traîne : annulez l'Odyssée sans remords, soirée calme au gîte à la place","Trajet Sailly-lez-Lannoy ↔ Poupehan non vérifié par un routage réel cette session — comptez large"] },
+      notes:["Les courses sont volontairement calées juste avant le check-in (et non juste après l'arrivée) pour que le frais reste le moins longtemps possible dans le coffre — prévoir un sac isotherme/glacière si le timing venait à glisser","Si le trajet a pris du retard ou que l'installation traîne : annulez l'Odyssée sans remords, soirée calme au gîte à la place","Trajet Sailly-lez-Lannoy ↔ Poupehan non vérifié par un routage réel cette session — comptez large"] },
 
     { id:"b2", scene:"town", emoji:"🏰", dow:"Dimanche 18 octobre", title:"Fauconnerie, Belvédère et les Nutons",
       sum:"Spectacle de fauconnerie, Belvédère d'Auclin et chasse aux Nutons en forêt, sans visite complète du château.",
