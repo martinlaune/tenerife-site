@@ -127,7 +127,7 @@ function addrLink(p){
   const acts=[`<a class="da go" href="${mapsUrl(p)}" target="_blank" rel="noopener">🧭 Y aller</a>`,
               `<a class="da see" href="${searchUrl(p)}" target="_blank" rel="noopener">🔎 Voir</a>`];
   if(p.tel) acts.unshift(`<a class="da call" href="tel:${p.tel}">📞 Appeler</a>`);
-  if(p.url) acts.push(`<a class="da trail" href="${p.url}" target="_blank" rel="noopener">🥾 AllTrails</a>`);
+  if(p.url) acts.push(`<a class="da trail" href="${p.url}" target="_blank" rel="noopener">🥾 ${esc(p.urlLabel||"AllTrails")}</a>`);
   const hours = p.h ? `<small class="addr-hours">🕒 ${esc(p.h)}</small>` : "";
   const detail = p.d ? `<p>${esc(p.d)}</p>` : "";
   return `<div class="addr">
