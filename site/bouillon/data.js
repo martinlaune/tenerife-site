@@ -35,23 +35,21 @@ const TRIP = {
       ],
       notes:["Si le trajet a pris du retard ou que l'installation traîne : annulez l'Odyssée sans remords, soirée calme au gîte à la place","Trajet Sailly-lez-Lannoy ↔ Poupehan non vérifié par un routage réel cette session — comptez large"] },
 
-    { id:"b2", scene:"town", emoji:"🏰", dow:"Dimanche 18 octobre", title:"Château fort, fauconnerie et les Nutons",
-      sum:"Visite du château, spectacle de fauconnerie, chasse aux Nutons en forêt.",
-      obj:"Le seul bloc non négociable du séjour : château + fauconnerie. Le Belvédère s'ajoute seulement si l'énergie suit.",
+    { id:"b2", scene:"town", emoji:"🏰", dow:"Dimanche 18 octobre", title:"Fauconnerie, Belvédère et les Nutons",
+      sum:"Spectacle de fauconnerie, Belvédère d'Auclin et chasse aux Nutons en forêt, sans visite complète du château.",
+      obj:"Le château se revit en profondeur lundi soir à la nocturne — dimanche, on garde la fauconnerie et le Belvédère, sans refaire toute la visite libre du fort.",
       lunch:{name:"Brasserie/sandwicherie à Bouillon", planB:"Pique-nique", budget:"—", note:"selon l'envie du moment"},
       sched:[
         ["09h45","Départ vers Bouillon","≈10-15 min depuis Poupehan, estimation non routée en direct"],
-        ["10h00","Arrivée, parking, retrait des City Pass+"],
-        ["10h15","Visite libre du château fort","Horaires dimanche 10h-18h (source en image sur le site officiel, à reconfirmer au 061 46 42 02)"],
+        ["10h45","Arrivée, parking, retrait des City Pass+"],
         ["11h30","Spectacle de fauconnerie","≈30 min, inclus dans le City Pass+ — confirmé pour la saison en cours en octobre"],
-        ["12h00","Suite de la visite : donjon, oubliettes, remparts"],
+        ["12h00","Déjeuner à Bouillon"],
+        ["13h30","Belvédère de Bouillon / d'Auclin","Côte d'Auclin, accès voiture direct, 161 marches, panorama sur Bouillon et la Semois — 30-45 min"],
         ["14h15","Luna et les Gardiens — parcours Bouillon","Départ Arboretum de Bouillon, rue de la Ramonette · 2,1 km / +92 m, facile · énigme des Nutons/Faudlou · appli gratuite"],
-        ["15h30","Fin du parcours Luna"],
-        ["15h45","Belvédère de Bouillon / d'Auclin (en option)","Côte d'Auclin, accès voiture direct, 161 marches, panorama sur Bouillon et la Semois — à sauter si l'énergie manque"],
-        ["16h45","Retour au gîte"],
-        ["17h00","Temps calme : lecture pour Alban, jeux vidéo foot pour Vianney"]
+        ["15h30","Fin du parcours Luna, retour au gîte"],
+        ["16h00","Temps calme : lecture pour Alban, jeux vidéo foot pour Vianney"]
       ],
-      notes:["La fauconnerie peut être annulée par grand vent ou forte pluie (règle officielle, bien-être des rapaces) — dans ce cas, remplacer Luna Bouillon et le Belvédère par le Musée Ducal + Bouillon Medieval Experience, intérieurs et inclus dans le City Pass+","Vianney fatigué : écourter ou sauter la montée des 161 marches du Belvédère, le panorama se voit déjà depuis le parking"] },
+      notes:["La fauconnerie peut être annulée par grand vent ou forte pluie (règle officielle, bien-être des rapaces) — dans ce cas, remplacer Luna Bouillon par le Musée Ducal + Bouillon Medieval Experience, intérieurs et inclus dans le City Pass+"] },
 
     { id:"b3", scene:"forest", emoji:"🌲", dow:"Lundi 19 octobre", title:"Nafraiture et la nocturne aux flambeaux",
       sum:"Parcours Luna en forêt, puis visite nocturne du château.",
@@ -104,8 +102,8 @@ const TRIP = {
     { day:"2026-10-17", cls:"h-violet", scene:"sunset", emoji:"🌌", when:"Samedi soir", title:"Odyssée de Lumière",
       text:"Un spectacle nocturne son et lumière dans les cours du château, à la tombée de la nuit.",
       list:["19h15, arrivée 30 min avant","Réservation obligatoire, via le City Pass+","Sacrifiable en dernier recours si fatigue du trajet"] },
-    { day:"2026-10-18", cls:"h-gold", scene:"town", emoji:"🦅", when:"Dimanche", title:"Château fort & fauconnerie",
-      text:"Le seul bloc non négociable du séjour : donjon, remparts, oubliettes, et un vrai ballet de rapaces.",
+    { day:"2026-10-18", cls:"h-gold", scene:"town", emoji:"🦅", when:"Dimanche", title:"Fauconnerie",
+      text:"Un vrai ballet de rapaces dans la cour du château — la visite complète du château, elle, se fait lundi soir à la nocturne.",
       list:["Spectacles à 11h30, 14h00 et 15h30","Inclus dans le City Pass+","Annulable par grand vent/forte pluie"] },
     { day:"2026-10-19", cls:"h-coral", scene:"forest", emoji:"🔥", when:"Lundi soir", title:"Nocturne aux flambeaux",
       text:"Une visite du château à la lueur des flambeaux, dans le noir tombé dès 18h42.",
@@ -131,7 +129,7 @@ const TRIP = {
     { icon:"⚠️", title:"Plans B météo & chasse", warn:true,
       list:["Sam 17 : Odyssée sacrifiable en dernier recours si fatigue/retard","Dim 18 : fauconnerie annulable par grand vent/forte pluie → Musée Ducal + Medieval Experience en repli","Lun 19 : chasse à Nafraiture → Luna Herbeumont ; pluie → la nocturne se tient à l'abri dans le fort","Mar 20 : chasse à Botassart/Corbion → Rocher du Corps de Garde ou Crêtes de Chairière ; pluie → concentrer sur les points de vue accessibles en voiture","Mer 21 : jour de route, peu d'impact météo/chasse"] },
     { icon:"🙂", title:"Si Vianney en a marre", warn:true,
-      list:["Le château et la fauconnerie restent le seul bloc non négociable du séjour","Sam 17 : sauter l'Odyssée entièrement si besoin","Dim 18 : écourter le Belvédère ou Luna Bouillon avant la fin","Lun 19 : ne jamais ajouter Laforêt ce jour-là, écourter le Luna de Nafraiture si besoin","Mar 20 : supprimer la Roche des Fées de l'après-midi, rentrer après la boucle du matin"] },
+      list:["La fauconnerie et le Belvédère restent les deux blocs fixes du dimanche — seul Luna Bouillon est écourtable si besoin","Sam 17 : sauter l'Odyssée entièrement si besoin","Dim 18 : écourter Luna Bouillon avant la fin s'il faut gagner du temps","Lun 19 : ne jamais ajouter Laforêt ce jour-là, écourter le Luna de Nafraiture si besoin","Mar 20 : supprimer la Roche des Fées de l'après-midi, rentrer après la boucle du matin"] },
   ],
 
   places: {
