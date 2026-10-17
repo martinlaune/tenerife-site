@@ -17,25 +17,20 @@ const TRIP = {
   },
 
   days: [
-    { id:"b1", scene:"sunset", emoji:"🚗", dow:"Samedi 17 octobre", title:"Route & Odyssée de Lumière",
-      sum:"Installation au P'tit Nid, puis spectacle nocturne au château.",
-      obj:"Journée 100 % logistique : arriver, s'installer, dîner, puis le spectacle de lumière le soir si tout va bien.",
-      resa:"Odyssée de Lumière 19h15 (obligatoire, City Pass+)",
+    { id:"b1", scene:"sunset", emoji:"🚗", dow:"Samedi 17 octobre", title:"Route & soirée tranquille",
+      sum:"Départ à 14h30, installation au P'tit Nid, courses au Carrefour et soirée calme au gîte.",
+      obj:"Journée 100 % logistique : arriver, s'installer, faire les courses au Carrefour, dîner simple et se coucher tôt. Pas de sortie le soir (trop de fatigue après la route).",
       sched:[
-        ["08h30","Départ de Sailly-lez-Lannoy","Trajet non revérifié cette session (≈2h à 2h30 selon l'itinéraire réel) — à confirmer sur GPS le jour même"],
-        ["≈10h45","Arrivée région de Bouillon"],
-        ["11h00","Pause déjeuner / pique-nique"],
-        ["12h00","Rochehaut / panorama sur Frahan","≈5-6 min du gîte, 20-30 min sur place — avant les courses, tant que le coffre est encore vide"],
-        ["14h30","Courses ALDI Bouillon/Noirefontaine","Rue de la Sentinelle 66 · ouvert samedi 8h30-19h"],
-        ["15h15","Complément Carrefour Market (100 m à côté)","Ouverture réelle probablement 9h00, pas 8h30 — à confirmer au 061 61 42 01"],
-        ["16h00","Check-in — Le P'tit Nid, Poupehan","Direct après les courses, pour limiter le temps du frais dans le coffre"],
-        ["16h15","Installation, rangement des courses au frigo"],
-        ["17h30","Dîner léger et rapide au gîte"],
-        ["18h30","Départ vers le château (parking centre-ville)"],
-        ["19h15","Odyssée de Lumière","Présence 30 min avant conseillée · horaire confirmé pour la période 15/10-11/11 · réservation obligatoire, accessible uniquement via le City Pass+"],
-        ["≈20h30","Retour au gîte, coucher"]
+        ["14h30","Départ de Sailly-lez-Lannoy","Déjeuner pris avant de partir ou sandwich en route · trajet non revérifié (≈2h à 2h30 selon l'itinéraire réel) — à confirmer sur GPS"],
+        ["≈16h45","Arrivée et check-in — Le P'tit Nid, Poupehan","Check-in dès 16h"],
+        ["17h00","Installation","Valises, lits faits (draps non fournis), rangement du non-frais"],
+        ["17h45","Courses Carrefour Market Noirefontaine","Rue de la Sentinelle 68 · probablement ouvert jusqu'à 19h, à confirmer au 061 61 42 01 · dîner, petit-déjeuner et de quoi tenir jusqu'à dimanche"],
+        ["18h30","Retour au gîte, rangement du frais au frigo"],
+        ["19h15","Dîner simple au gîte","Pâtes, croque-monsieur ou soupe"],
+        ["20h30","Temps calme","Lecture pour Alban, jeux vidéo foot pour Vianney"],
+        ["≈21h30","Coucher tôt","Fauconnerie dimanche à 11h30"]
       ],
-      notes:["Les courses sont volontairement calées juste avant le check-in (et non juste après l'arrivée) pour que le frais reste le moins longtemps possible dans le coffre — prévoir un sac isotherme/glacière si le timing venait à glisser","Si le trajet a pris du retard ou que l'installation traîne : annulez l'Odyssée sans remords, soirée calme au gîte à la place","Trajet Sailly-lez-Lannoy ↔ Poupehan non vérifié par un routage réel cette session — comptez large"] },
+      notes:["Si le trajet prend du retard, faire les courses en version minimale (dîner + petit-déjeuner) ; prévoir un sac isotherme si le frais reste dans le coffre","Odyssée de Lumière (samedi 19h15) abandonnée : voir si la réservation peut être annulée, remboursée ou déplacée (période 15/10-11/11)","Rochehaut / panorama sur Frahan : déjà prévu mardi 20 à 09h20, rien à rattraper","Trajet Sailly-lez-Lannoy ↔ Poupehan non vérifié par un routage réel cette session — comptez large"] },
 
     { id:"b2", scene:"town", emoji:"🏰", dow:"Dimanche 18 octobre", title:"Fauconnerie, Belvédère et les Nutons",
       sum:"Spectacle de fauconnerie, Belvédère d'Auclin et chasse aux Nutons en forêt, sans visite complète du château.",
@@ -102,9 +97,6 @@ const TRIP = {
   ],
 
   highlights: [
-    { day:"2026-10-17", cls:"h-violet", scene:"sunset", emoji:"🌌", when:"Samedi soir", title:"Odyssée de Lumière",
-      text:"Un spectacle nocturne son et lumière dans les cours du château, à la tombée de la nuit.",
-      list:["19h15, arrivée 30 min avant","Réservation obligatoire, via le City Pass+","Sacrifiable en dernier recours si fatigue du trajet"] },
     { day:"2026-10-18", cls:"h-gold", scene:"town", emoji:"🦅", when:"Dimanche", title:"Fauconnerie",
       text:"Un vrai ballet de rapaces dans la cour du château — la visite complète du château, elle, se fait lundi soir à la nocturne.",
       list:["Spectacles à 11h30, 14h00 et 15h30","Inclus dans le City Pass+","Annulable par grand vent/forte pluie"] },
@@ -118,21 +110,21 @@ const TRIP = {
       kv:[["City Pass+ (2 adultes + Alban + Vianney)","60,00 €"],["Nocturne (2 adultes + Alban + Vianney)","49,50 €"],["Total billetterie","109,50 €"]],
       text:"Alban (13 ans) est hors tranche enfant (qui s'arrête à 12 ans) et compte au tarif adulte, sauf tarif « étudiant » à confirmer sur place (-8 € au total si applicable). Vérifier aussi si un seul City Pass+ par personne couvre bien le samedi soir et le dimanche, ou s'il faut deux passages." },
     { icon:"🛒", title:"Budget — vie quotidienne (estimation)",
-      kv:[["Courses ALDI/Carrefour (4 j.)","150-200 €"],["Boulangerie (4 des 5 jours)","15-20 €"],["Repas extérieurs","40-60 €"]],
+      kv:[["Courses Carrefour (4 j.)","150-200 €"],["Boulangerie (4 des 5 jours)","15-20 €"],["Repas extérieurs","40-60 €"]],
       text:"Luna et les Gardiens (Bouillon + Vresse) : gratuit sur toutes les pages officielles consultées. Belvédère, Tombeau du Géant, passerelle, Rochehaut, Roche des Fées : accès libre et gratuit. Ménage (60 €) et caution (125 €, remboursable) du gîte, déjà connus, hors budget activités." },
     { icon:"🧳", title:"Checklist — linge & vêtements", check:true,
       list:["Draps pour tous les lits (rien fourni par le gîte)","Serviettes de toilette","Torchons de cuisine","Vêtements chauds superposables (nuits ≈5,5°C en moyenne)","Vêtements de pluie / coupe-vent","Chaussures fermées, adhérentes","Bonnet léger pour les sorties du soir"] },
     { icon:"🔋", title:"Checklist — électronique & divers", check:true,
       list:["Smartphones/tablette chargés","App « Luna et les Gardiens » installée avant le départ","Chargeurs","Batterie externe","Billets château en PDF/écran (réseau faible en forêt)","Un peu de liquide (petits commerces ruraux)"] },
     { icon:"📌", title:"Réservations à faire", check:true,
-      list:["Odyssée de Lumière — samedi 17, 19h15","Nocturne aux flambeaux — lundi 19 à 20h00 — RÉSERVÉE","City Pass+ ×4","Gîte Le P'tit Nid (Elloha, si pas déjà finalisé)","Bouillon Medieval Experience (si prévu en option)"],
+      list:["Nocturne aux flambeaux — lundi 19 à 20h00 — RÉSERVÉE","City Pass+ ×4","Gîte Le P'tit Nid (Elloha, si pas déjà finalisé)","Bouillon Medieval Experience (si prévu en option)"],
       contacts:[{n:"Château de Bouillon", sub:"Horaires, fauconnerie, nocturne", tel:"+3261464202"},{n:"Bouillon Medieval Experience", sub:"reservation@bouillonmedievalexperience.be", tel:"+3261468303"}] },
     { icon:"🔍", title:"Vérifications de dernière minute (48-72h avant)",
       list:["Battues de chasse : bouillon.be/actualites (Bouillon-Corbion-Poupehan, Arboretum), vresse-sur-semois.be (Nafraiture, Laforêt), chasseonweb.be (carte régionale) — sur place, seuls les panneaux physiques à l'entrée des bois font foi","Météo : meteo.be/fr/bouillon — signal fiable seulement à partir d'environ 10-14 octobre 2026","Horaires château / fauconnerie / Medieval Experience : reconfirmer par téléphone, les horaires publiés en ligne le sont en image","Carrefour Market Noirefontaine, ouverture réelle le samedi (8h30 supposé vs 9h00 selon les annuaires)","Boulangerie Pom' de Pain ouverte le mardi 20 (exception vacances scolaires)"] },
     { icon:"⚠️", title:"Plans B météo & chasse", warn:true,
-      list:["Sam 17 : Odyssée sacrifiable en dernier recours si fatigue/retard","Dim 18 : fauconnerie annulable par grand vent/forte pluie → Musée Ducal + Medieval Experience en repli","Lun 19 : chasse à Nafraiture → Luna Herbeumont ; pluie → la nocturne se tient à l'abri dans le fort","Mar 20 : chasse à Botassart/Corbion → Rocher du Corps de Garde ou Crêtes de Chairière ; pluie → concentrer sur les points de vue accessibles en voiture","Mer 21 : jour de route, peu d'impact météo/chasse"] },
+      list:["Sam 17 : courses minimales (dîner + petit-déjeuner) si retard de route","Dim 18 : fauconnerie annulable par grand vent/forte pluie → Musée Ducal + Medieval Experience en repli","Lun 19 : chasse à Nafraiture → Luna Herbeumont ; pluie → la nocturne se tient à l'abri dans le fort","Mar 20 : chasse à Botassart/Corbion → Rocher du Corps de Garde ou Crêtes de Chairière ; pluie → concentrer sur les points de vue accessibles en voiture","Mer 21 : jour de route, peu d'impact météo/chasse"] },
     { icon:"🙂", title:"Si Vianney en a marre", warn:true,
-      list:["La fauconnerie et le Belvédère restent les deux blocs fixes du dimanche — seul Luna Bouillon est écourtable si besoin","Sam 17 : sauter l'Odyssée entièrement si besoin","Dim 18 : écourter Luna Bouillon avant la fin s'il faut gagner du temps","Lun 19 : ne jamais ajouter Laforêt ce jour-là, écourter le Luna de Nafraiture si besoin","Mar 20 : supprimer la Roche des Fées de l'après-midi, rentrer après la boucle du matin"] },
+      list:["La fauconnerie et le Belvédère restent les deux blocs fixes du dimanche — seul Luna Bouillon est écourtable si besoin","Sam 17 : courses minimales si besoin, coucher tôt","Dim 18 : écourter Luna Bouillon avant la fin s'il faut gagner du temps","Lun 19 : ne jamais ajouter Laforêt ce jour-là, écourter le Luna de Nafraiture si besoin","Mar 20 : supprimer la Roche des Fées de l'après-midi, rentrer après la boucle du matin"] },
   ],
 
   places: {
@@ -168,7 +160,7 @@ const TRIP = {
 };
 
 TRIP.dayPlaces = {
-  b1: ["gite","aldi","carrefour","rochehaut","chateau"],
+  b1: ["gite","carrefour"],
   b2: ["chateau","arboretum","belvedere"],
   b3: ["nafraiture","jambon","claies","chateau"],
   b4: ["rochehaut","boulangerie","botassart","cordemois","corbion"],
