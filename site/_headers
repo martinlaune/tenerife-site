@@ -1,0 +1,10 @@
+# En-têtes pour Cloudflare Pages / Netlify (équivalent de deploy/no-cache.conf).
+# HTML/JS/CSS : toujours revalidés (bug iOS Safari). Photos : cache 1 an.
+/*
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/*/photos/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/icons/*
+  Cache-Control: public, max-age=31536000, immutable
