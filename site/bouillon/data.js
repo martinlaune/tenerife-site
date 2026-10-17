@@ -56,7 +56,7 @@ const TRIP = {
     { id:"b3", scene:"forest", emoji:"🌲", dow:"Lundi 19 octobre", title:"Nafraiture et la nocturne aux flambeaux",
       sum:"Parcours Luna en forêt, puis visite nocturne du château.",
       obj:"Une seule sortie à pied dans la journée, pour garder Vianney frais avant la nocturne du soir.",
-      resa:"Nocturne aux flambeaux (obligatoire, heure exacte à confirmer)",
+      resa:"Nocturne aux flambeaux — RÉSERVÉE (lundi 19 octobre, 20h00)",
       sched:[
         ["09h00","Réveil, petit-déjeuner","Boulangerie fermée le lundi — pain acheté la veille"],
         ["09h30","Départ vers Nafraiture","≈20-22 min"],
@@ -66,7 +66,7 @@ const TRIP = {
         ["13h00","Après-midi libre : jeux, lecture, repos","Volontairement sans deuxième balade, pour ne pas cumuler deux sorties à pied avant la nocturne"],
         ["18h00","Dîner avancé au gîte","Horaire à ajuster une fois l'heure exacte de la nocturne connue"],
         ["18h45","Départ vers le château","Nuit déjà tombée — coucher du soleil 18h42 ce jour-là"],
-        ["? à confirmer","Visite nocturne aux flambeaux","Date confirmée (19 et 20 octobre sont les deux seules dates de la fenêtre) mais heure de départ précise non publiée en clair — à obtenir en réservant. Comptez ≈1h de visite"],
+        ["20h00","Visite nocturne aux flambeaux","Date confirmée (19 et 20 octobre sont les deux seules dates de la fenêtre) mais heure de départ précise non publiée en clair — à obtenir en réservant. Comptez ≈1h de visite"],
         ["≈21h00","Retour au gîte, coucher"]
       ],
       notes:["Aucune date de battue 2026 n'est publiée à ce jour pour Nafraiture — si le sentier est fermé, basculer sur le Luna d'Herbeumont, déjà identifié comme repli","La nocturne se déroule en grande partie à l'abri dans les tours et logis du fort — prévoir des vêtements de pluie plutôt qu'envisager une annulation","Ne pas ajouter la Promenade des Légendes de Laforêt ce jour-là","En option si le temps le permet : le Pont de Claies de Laforêt (≈10 min du Jambon) est une passerelle en bois saisonnière, démontée à l'automne selon le niveau de l'eau — pas de date fixe, elle est peut-être déjà démontée à ces dates. Vérifier par téléphone avant de s'y arrêter (Centre Touristique de Vresse-sur-Semois, +32 61 29 28 27)"] },
@@ -110,7 +110,7 @@ const TRIP = {
       list:["Spectacles à 11h30, 14h00 et 15h30","Inclus dans le City Pass+","Annulable par grand vent/forte pluie"] },
     { day:"2026-10-19", cls:"h-coral", scene:"forest", emoji:"🔥", when:"Lundi soir", title:"Nocturne aux flambeaux",
       text:"Une visite du château à la lueur des flambeaux, dans le noir tombé dès 18h42.",
-      list:["Réservation obligatoire","Heure exacte à confirmer en réservant","≈1h de visite, en grande partie à l'abri"] },
+      list:["Réservation effectuée","Départ à 20h00","≈1h de visite, en grande partie à l'abri"] },
   ],
 
   practical: [
@@ -125,7 +125,7 @@ const TRIP = {
     { icon:"🔋", title:"Checklist — électronique & divers", check:true,
       list:["Smartphones/tablette chargés","App « Luna et les Gardiens » installée avant le départ","Chargeurs","Batterie externe","Billets château en PDF/écran (réseau faible en forêt)","Un peu de liquide (petits commerces ruraux)"] },
     { icon:"📌", title:"Réservations à faire", check:true,
-      list:["Odyssée de Lumière — samedi 17, 19h15","Nocturne aux flambeaux — lundi 19 (heure à confirmer)","City Pass+ ×4","Gîte Le P'tit Nid (Elloha, si pas déjà finalisé)","Bouillon Medieval Experience (si prévu en option)"],
+      list:["Odyssée de Lumière — samedi 17, 19h15","Nocturne aux flambeaux — lundi 19 à 20h00 — RÉSERVÉE","City Pass+ ×4","Gîte Le P'tit Nid (Elloha, si pas déjà finalisé)","Bouillon Medieval Experience (si prévu en option)"],
       contacts:[{n:"Château de Bouillon", sub:"Horaires, fauconnerie, nocturne", tel:"+3261464202"},{n:"Bouillon Medieval Experience", sub:"reservation@bouillonmedievalexperience.be", tel:"+3261468303"}] },
     { icon:"🔍", title:"Vérifications de dernière minute (48-72h avant)",
       list:["Battues de chasse : bouillon.be/actualites (Bouillon-Corbion-Poupehan, Arboretum), vresse-sur-semois.be (Nafraiture, Laforêt), chasseonweb.be (carte régionale) — sur place, seuls les panneaux physiques à l'entrée des bois font foi","Météo : meteo.be/fr/bouillon — signal fiable seulement à partir d'environ 10-14 octobre 2026","Horaires château / fauconnerie / Medieval Experience : reconfirmer par téléphone, les horaires publiés en ligne le sont en image","Carrefour Market Noirefontaine, ouverture réelle le samedi (8h30 supposé vs 9h00 selon les annuaires)","Boulangerie Pom' de Pain ouverte le mardi 20 (exception vacances scolaires)"] },
