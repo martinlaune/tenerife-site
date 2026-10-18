@@ -32,21 +32,20 @@ const TRIP = {
       ],
       notes:["Si le trajet prend du retard, faire les courses en version minimale (dîner + petit-déjeuner) ; prévoir un sac isotherme si le frais reste dans le coffre","Odyssée de Lumière (samedi 19h15) abandonnée : voir si la réservation peut être annulée, remboursée ou déplacée (période 15/10-11/11)","Rochehaut / panorama sur Frahan : déjà prévu mardi 20 à 09h20, rien à rattraper","Trajet Sailly-lez-Lannoy ↔ Poupehan non vérifié par un routage réel cette session — comptez large"] },
 
-    { id:"b2", scene:"town", emoji:"🏰", dow:"Dimanche 18 octobre", title:"Fauconnerie, Belvédère et les Nutons",
-      sum:"Spectacle de fauconnerie, Belvédère d'Auclin et chasse aux Nutons en forêt, sans visite complète du château.",
-      obj:"Le château se revit en profondeur lundi soir à la nocturne — dimanche, on garde la fauconnerie et le Belvédère, sans refaire toute la visite libre du fort.",
-      lunch:{name:"Brasserie/sandwicherie à Bouillon", planB:"Pique-nique", budget:"—", note:"selon l'envie du moment"},
+    { id:"b2", scene:"town", emoji:"🥾", dow:"Dimanche 18 octobre", title:"Belvédère, rando vers Bouillon et Luna",
+      sum:"Belvédère, descente à pied jusqu'à Bouillon, déjeuner au Petit Creux, remontée par le sentier, puis Luna et les Gardiens à l'arboretum.",
+      obj:"Une journée de marche autour de Bouillon, sans la visite du château.",
+      lunch:{name:"Le Petit Creux, Bouillon", planB:"", budget:"—", note:"déjeuner pris sur place"},
       sched:[
-        ["09h45","Départ vers Bouillon","≈10-15 min depuis Poupehan, estimation non routée en direct"],
-        ["10h45","Arrivée, parking, retrait des City Pass+"],
-        ["11h30","Spectacle de fauconnerie","≈30 min, inclus dans le City Pass+ — confirmé pour la saison en cours en octobre"],
-        ["12h00","Déjeuner à Bouillon"],
-        ["13h30","Belvédère de Bouillon / d'Auclin","Côte d'Auclin, accès voiture direct, 161 marches, panorama sur Bouillon et la Semois — 30-45 min"],
-        ["14h15","Luna et les Gardiens — parcours Bouillon","Départ Arboretum de Bouillon, rue de la Ramonette · 2,1 km / +92 m, facile · énigme des Nutons/Faudlou · appli gratuite"],
-        ["15h30","Fin du parcours Luna, retour au gîte"],
-        ["16h00","Temps calme : lecture pour Alban, jeux vidéo foot pour Vianney"]
+        ["10h30","Départ de la maison"],
+        ["Matin","Belvédère de Bouillon / d'Auclin","Montée au belvédère, panorama sur Bouillon et la Semois"],
+        ["Fin de matinée","Descente à pied jusqu'à Bouillon","Par le chemin de randonnée qui part du belvédère"],
+        ["Midi","Déjeuner au Petit Creux, à Bouillon"],
+        ["Début d'après-midi","Remontée à pied jusqu'au belvédère","Par le même chemin de randonnée"],
+        ["Après-midi","Luna et les Gardiens — parcours Bouillon","Départ Arboretum de Bouillon, rue de la Ramonette · 2,1 km / +92 m, facile · énigme des Nutons/Faudlou · appli gratuite"],
+        ["Fin d'après-midi","Retour à la maison"]
       ],
-      notes:["La fauconnerie peut être annulée par grand vent ou forte pluie (règle officielle, bien-être des rapaces) — dans ce cas, remplacer Luna Bouillon par le Musée Ducal + Bouillon Medieval Experience, intérieurs et inclus dans le City Pass+"] },
+      notes:["Journée réellement vécue le dimanche 18 octobre : les horaires précis ne sont pas notés, seul le départ de 10h30 l'est","Montée et descente à pied entre le belvédère et Bouillon faites deux fois (descente avant le déjeuner, remontée après)"] },
 
     { id:"b3", scene:"forest", emoji:"🌲", dow:"Lundi 19 octobre", title:"Nafraiture et la nocturne aux flambeaux",
       sum:"Parcours Luna en forêt, puis visite nocturne du château.",
@@ -161,7 +160,7 @@ const TRIP = {
 
 TRIP.dayPlaces = {
   b1: ["gite","carrefour"],
-  b2: ["chateau","arboretum","belvedere"],
+  b2: ["belvedere","arboretum"],
   b3: ["nafraiture","jambon","claies","chateau"],
   b4: ["rochehaut","boulangerie","botassart","cordemois","corbion"],
   b5: ["gite"],
